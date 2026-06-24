@@ -91,19 +91,3 @@ const refreshButton = $('#refresh-news');
 if (refreshButton) refreshButton.addEventListener('click', loadNews);
 loadNews();
 
-const signupForm = $('#signup-form');
-if (signupForm) {
-  signupForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const email = $('#email')?.value?.trim();
-    const message = $('#signup-message');
-    if (!message) return;
-    if (!email) {
-      message.textContent = 'Enter an email address first.';
-      return;
-    }
-    localStorage.setItem('xtianz-demo-email', email);
-    message.textContent = 'Demo saved locally. Connect this form to Beehiiv, ConvertKit, Mailchimp, or Formspree to collect real signups.';
-    signupForm.reset();
-  });
-}

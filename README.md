@@ -1,47 +1,32 @@
-# XTIANZ.com GitHub Pages Site
+# XTIANZ.com GitHub Pages Site - v4
 
-This is the upgraded XTIANZ static website package for GitHub Pages.
+This version removes the newsletter and coffee content and upgrades the Cars section into a performance-car/news hub.
 
 ## What is included
 
-- `index.html` — full homepage
-- `assets/styles.css` — modern dark AI/tech styling
-- `assets/app.js` — mobile menu, animation, demo newsletter, public AI headline feed
-- `assets/logo.svg` and `assets/favicon.svg` — custom XTIANZ logo assets
-- `CNAME` — custom domain file for `xtianz.com`
-- `.nojekyll` — tells GitHub Pages to serve files normally
-- `robots.txt` and `sitemap.xml` — basic SEO files
-- `404.html` — custom not-found page
+- Modern dark AI / MCP / MANGOS design
+- MANGOS = Meta, Anthropic, Nvidia, Google, OpenAI, SpaceX
+- Tech stocks ticker board
+- AI / tech news radar
+- Performance Cars section
+- Top 5 sports-car and auto-news sources
+- CNAME file for xtianz.com
+- robots.txt, sitemap.xml, 404 page, favicon, logo
 
 ## Upload to GitHub
 
-1. Go to your repository: `https://github.com/lomaximo888/xtianz.com`
-2. Click **Add file** → **Upload files**.
-3. Drag all files and folders from this package into GitHub.
-4. Commit with a message like: `Upgrade XTIANZ site`.
-5. Go to **Settings** → **Pages**.
-6. Confirm:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/root`
-7. Custom domain should be: `xtianz.com`.
-8. Enable **Enforce HTTPS** once GitHub allows it.
+1. Extract this ZIP.
+2. Open `https://github.com/lomaximo888/xtianz.com`.
+3. Click **Add file → Upload files**.
+4. Drag all extracted files and folders into GitHub.
+5. Commit with message: `Deploy XTIANZ v4`.
+6. Go to **Settings → Pages** and confirm:
+   - Source: Deploy from branch
+   - Branch: main
+   - Folder: /(root)
+   - Custom domain: xtianz.com
+7. Wait 1-3 minutes and refresh `https://xtianz.com`.
 
-## DNS for Bluehost
+## Important
 
-For the root domain, add these A records:
-
-- `@` → `185.199.108.153`
-- `@` → `185.199.109.153`
-- `@` → `185.199.110.153`
-- `@` → `185.199.111.153`
-
-For `www`, add this CNAME:
-
-- `www` → `lomaximo888.github.io`
-
-## Notes
-
-- TradingView stock widgets run from TradingView and need internet access in the browser.
-- The AI headline feed uses the public Hacker News Algolia API. If it is unavailable, the site automatically shows fallback cards.
-- The newsletter form is a demo only. To collect real emails, connect it to Beehiiv, ConvertKit, Mailchimp, or Formspree.
+Do not upload the ZIP itself to GitHub. Upload the extracted files and folders.
