@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xtianz.com/sitemap.xml
