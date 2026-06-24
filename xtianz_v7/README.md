@@ -1,4 +1,4 @@
-# XTIANZ.com GitHub Pages Website — v7
+# XTIANZ.com GitHub Pages Website — v5
 
 This is a static, GitHub Pages-ready website for **xtianz.com**.
 
@@ -7,7 +7,7 @@ This is a static, GitHub Pages-ready website for **xtianz.com**.
 - Modern dark AI/tech design
 - Start Here section
 - MANGOS section: Meta, Anthropic, Nvidia, Google, OpenAI, SpaceX
-- Instagram icon buttons for each MANGOS company
+- Official Instagram links for each MANGOS company
 - MCP overview and official MCP link
 - Expanded stocks section with ticker tape, top movers links, public/private market signal notes, trend notes, and financial disclaimer
 - World Cup 2026 section with D.C. National Mall Fan Zone, FIFA Fan Festival links, and DMV watch-party resources
@@ -40,17 +40,25 @@ Repository → Settings → Pages:
 - Enforce HTTPS: enabled when available
 
 
-## Version 7 updates
+## Version 6 updates
 
-- Removed the XTIANZ Instagram profile icon/link from the header.
-- Removed the XTIANZ Instagram profile link from the footer.
-- Removed the XTIANZ Instagram profile from structured metadata.
-- Kept the company Instagram icon buttons inside the MANGOS cards.
+- Replaced visible Instagram text links in the MANGOS cards with clean Instagram icon buttons.
+- Added a top-right Instagram icon linking to https://www.instagram.com/xtianz/.
+- Added a footer Instagram icon for easier social discovery.
+- Added a Next Enhancements / Roadmap section for future upgrades.
+- Added canonical URL and Website structured data for better SEO.
 
-## Suggested next enhancements after v7
+## Suggested next enhancements after v6
 
 1. Add separate pages for AI/MCP, MANGOS, Markets, World Cup 2026, and Performance Cars.
 2. Add an Open Graph preview image so links look better when shared on LinkedIn, Instagram, and text messages.
 3. Add a static blog/article system using simple HTML files so you can post weekly XTIANZ Signal updates.
 4. Add a local DMV World Cup guide page with fan zones, bars, Metro tips, and match-day plans.
 5. Add a sports-car buyer guide page with Porsche 911, BMW M, Lexus F, Acura Type S, Corvette, and EV performance notes.
+
+
+## v7 update
+
+- Kept the XTIANZ Instagram profile link.
+- Made the header and footer XTIANZ Instagram icon smaller so it does not dominate the navigation.
+- Kept MANGOS company Instagram icon buttons unchanged.

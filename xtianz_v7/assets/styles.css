@@ -446,7 +446,7 @@ h3 { font-size: 1.35rem; }
   .site-nav { max-height: calc(100vh - 90px); overflow-y: auto; }
 }
 
-/* XTIANZ v7: Company Instagram icon polish + roadmap */
+/* XTIANZ v7: smaller XTIANZ Instagram icon + roadmap */
 .header-actions {
   display: flex;
   align-items: center;
@@ -490,7 +490,14 @@ h3 { font-size: 1.35rem; }
 }
 .link-row .instagram-link { padding: 0; }
 .header-ig {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
   border-color: rgba(255, 189, 107, 0.42);
+}
+.header-ig svg {
+  width: 15px;
+  height: 15px;
 }
 .roadmap-section { margin-top: 100px; }
 .roadmap-grid .watch-card { min-height: 230px; }
@@ -500,13 +507,18 @@ h3 { font-size: 1.35rem; }
   gap: 14px;
 }
 .footer-ig {
-  width: 38px;
-  height: 38px;
-  min-width: 38px;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+}
+.footer-ig svg {
+  width: 15px;
+  height: 15px;
 }
 
 @media (max-width: 900px) {
   .header-actions { gap: 8px; }
+  .header-ig { order: 1; width: 30px; height: 30px; min-width: 30px; }
   .nav-toggle { order: 2; }
   .site-nav { order: 3; }
 }
@@ -514,5 +526,7 @@ h3 { font-size: 1.35rem; }
 @media (max-width: 640px) {
   .brand span { font-size: 0.9rem; }
   .icon-link { width: 38px; height: 38px; min-width: 38px; }
+  .header-ig, .footer-ig { width: 30px; height: 30px; min-width: 30px; }
+  .header-ig svg, .footer-ig svg { width: 15px; height: 15px; }
   .footer-links { justify-content: space-between; }
 }
