@@ -23,7 +23,7 @@ This is a static, GitHub Pages-ready website for **xtianz.com**.
 3. Click **Add file** → **Upload files**.
 4. Drag all extracted files and folders into GitHub.
 5. Choose **Replace existing files** if prompted.
-6. Commit with message: `Deploy XTIANZ v5`.
+6. Commit with message: `Deploy XTIANZ v6`.
 7. Wait for GitHub Pages to deploy.
 8. Open `https://xtianz.com`.
 
@@ -38,3 +38,20 @@ Repository → Settings → Pages:
 - Folder: /(root)
 - Custom domain: xtianz.com
 - Enforce HTTPS: enabled when available
+
+
+## Version 6 updates
+
+- Replaced visible Instagram text links in the MANGOS cards with clean Instagram icon buttons.
+- Added a top-right Instagram icon linking to https://www.instagram.com/xtianz/.
+- Added a footer Instagram icon for easier social discovery.
+- Added a Next Enhancements / Roadmap section for future upgrades.
+- Added canonical URL and Website structured data for better SEO.
+
+## Suggested next enhancements after v6
+
+1. Add separate pages for AI/MCP, MANGOS, Markets, World Cup 2026, and Performance Cars.
+2. Add an Open Graph preview image so links look better when shared on LinkedIn, Instagram, and text messages.
+3. Add a static blog/article system using simple HTML files so you can post weekly XTIANZ Signal updates.
+4. Add a local DMV World Cup guide page with fan zones, bars, Metro tips, and match-day plans.
+5. Add a sports-car buyer guide page with Porsche 911, BMW M, Lexus F, Acura Type S, Corvette, and EV performance notes.
