@@ -1,32 +1,40 @@
-# XTIANZ.com GitHub Pages Site - v4
+# XTIANZ.com GitHub Pages Website — v5
 
-This version removes the newsletter and coffee content and upgrades the Cars section into a performance-car/news hub.
+This is a static, GitHub Pages-ready website for **xtianz.com**.
 
 ## What is included
 
-- Modern dark AI / MCP / MANGOS design
-- MANGOS = Meta, Anthropic, Nvidia, Google, OpenAI, SpaceX
-- Tech stocks ticker board
-- AI / tech news radar
-- Performance Cars section
-- Top 5 sports-car and auto-news sources
-- CNAME file for xtianz.com
-- robots.txt, sitemap.xml, 404 page, favicon, logo
+- Modern dark AI/tech design
+- Start Here section
+- MANGOS section: Meta, Anthropic, Nvidia, Google, OpenAI, SpaceX
+- Official Instagram links for each MANGOS company
+- MCP overview and official MCP link
+- Expanded stocks section with ticker tape, top movers links, public/private market signal notes, trend notes, and financial disclaimer
+- World Cup 2026 section with D.C. National Mall Fan Zone, FIFA Fan Festival links, and DMV watch-party resources
+- Performance Cars section with car watchlist and top auto news/sports-car links
+- Weekly XTIANZ Signal article template
+- No newsletter signup and no coffee section
+- CNAME file already set to `xtianz.com`
 
-## Upload to GitHub
+## Upload instructions
 
-1. Extract this ZIP.
-2. Open `https://github.com/lomaximo888/xtianz.com`.
-3. Click **Add file → Upload files**.
+1. Extract this ZIP on your computer.
+2. Go to your GitHub repository: `https://github.com/lomaximo888/xtianz.com`
+3. Click **Add file** → **Upload files**.
 4. Drag all extracted files and folders into GitHub.
-5. Commit with message: `Deploy XTIANZ v4`.
-6. Go to **Settings → Pages** and confirm:
-   - Source: Deploy from branch
-   - Branch: main
-   - Folder: /(root)
-   - Custom domain: xtianz.com
-7. Wait 1-3 minutes and refresh `https://xtianz.com`.
+5. Choose **Replace existing files** if prompted.
+6. Commit with message: `Deploy XTIANZ v5`.
+7. Wait for GitHub Pages to deploy.
+8. Open `https://xtianz.com`.
 
-## Important
+Do not upload the ZIP file itself. Upload the extracted files.
 
-Do not upload the ZIP itself to GitHub. Upload the extracted files and folders.
+## GitHub Pages settings
+
+Repository → Settings → Pages:
+
+- Source: Deploy from branch
+- Branch: main
+- Folder: /(root)
+- Custom domain: xtianz.com
+- Enforce HTTPS: enabled when available
