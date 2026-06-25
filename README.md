@@ -1,4 +1,4 @@
-# XTIANZ.com v8 — GitHub Pages Upload
+# XTIANZ.com v9 — GitHub Pages Upload
 
 This version adds:
 
@@ -9,18 +9,15 @@ This version adds:
 - More market-movers and research-tool context
 - Existing AI, MCP, MANGOS, World Cup 2026, and Performance Cars sections
 
-## Important: Add your Alinea referral link
+## Alinea referral link
 
-Before publishing, open `index.html` and search for:
+Your Alinea referral link has already been added to the Alinea card:
 
 ```text
-PASTE_YOUR_ALINEA_REFERRAL_LINK_HERE
+https://alinea-referral.up.railway.app?code=ARP4R
 ```
 
-Replace it with your real Alinea referral URL.
-
 Do not share your Alinea password, GitHub password, or any login code.
-Only your public referral URL is needed.
 
 ## Upload to GitHub
 
@@ -32,7 +29,7 @@ Only your public referral URL is needed.
 6. Commit with:
 
 ```text
-Deploy XTIANZ v8
+Deploy XTIANZ v9
 ```
 
 ## GitHub Pages settings

@@ -90,12 +90,3 @@ async function loadNews() {
 const refreshButton = $('#refresh-news');
 if (refreshButton) refreshButton.addEventListener('click', loadNews);
 loadNews();
-
-
-// XTIANZ v8: prevent accidental publishing of a placeholder referral link.
-document.querySelectorAll('a[href*="PASTE_YOUR_ALINEA_REFERRAL_LINK_HERE"]').forEach((link) => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    alert('Replace PASTE_YOUR_ALINEA_REFERRAL_LINK_HERE in index.html with your real Alinea referral link before publishing.');
-  });
-});
