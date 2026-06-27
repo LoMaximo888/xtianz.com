@@ -14,13 +14,21 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/styles.css" />
 
+  <!-- Google AdSense Auto Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9242762673194411" crossorigin="anonymous"></script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "XTIANZ",
     "url": "https://xtianz.com/",
-    "description": "XTIANZ tracks AI, MCP, MANGOS companies, tech stocks, market movers, investing tools, tech news, World Cup 2026 fan zones, performance cars, sports-car culture, and automotive trends."
+    "description": "XTIANZ tracks AI, MCP, MANGOS companies, tech stocks, market movers, investing tools, tech news, World Cup 2026 fan zones, performance cars, sports-car culture, and automotive trends.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.google.com/search?sitesearch=xtianz.com&q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   }
   </script>
 </head>
@@ -41,6 +49,7 @@
         <a href="#mcp">MCP</a>
         <a href="#markets">Markets</a>
         <a href="#tools">Tools</a>
+        <a href="#site-search">Search</a>
         <a href="#worldcup">World Cup</a>
         <a href="#cars">Cars</a>
       </nav>
@@ -57,6 +66,7 @@
         <div class="hero-actions">
           <a class="button primary" href="#start">Start here</a>
           <a class="button ghost" href="#tools">Tools I use</a>
+          <a class="button ghost" href="#site-search">Search XTIANZ</a>
         </div>
         <div class="pulse-row" aria-label="Site highlights">
           <span><b>AI Radar</b> live links</span>
@@ -91,6 +101,31 @@
       </div>
     </section>
 
+
+    <section id="site-search" class="section reveal search-section">
+      <div class="section-heading">
+        <p class="eyebrow">Search XTIANZ</p>
+        <h2>Find AI, MCP, MANGOS, markets, World Cup, and performance-car topics.</h2>
+        <p>This search box uses Google site search so it works immediately on GitHub Pages. For future monetized search results, add your Google Programmable Search Engine ID in <code>search.html</code>.</p>
+      </div>
+      <div class="search-panel glass">
+        <form class="site-search-form" action="https://www.google.com/search" method="get" target="_blank" rel="noopener">
+          <input type="hidden" name="sitesearch" value="xtianz.com" />
+          <label class="sr-only" for="site-search-input">Search XTIANZ</label>
+          <input id="site-search-input" name="q" type="search" placeholder="Search AI, MCP, Nvidia, SpaceX, World Cup, Porsche..." required />
+          <button class="button primary" type="submit">Search</button>
+        </form>
+        <div class="quick-search-tags" aria-label="Quick search topics">
+          <a href="https://www.google.com/search?q=site%3Axtianz.com+MANGOS" target="_blank" rel="noopener">MANGOS</a>
+          <a href="https://www.google.com/search?q=site%3Axtianz.com+MCP" target="_blank" rel="noopener">MCP</a>
+          <a href="https://www.google.com/search?q=site%3Axtianz.com+Nvidia" target="_blank" rel="noopener">Nvidia</a>
+          <a href="https://www.google.com/search?q=site%3Axtianz.com+World+Cup+2026" target="_blank" rel="noopener">World Cup 2026</a>
+          <a href="https://www.google.com/search?q=site%3Axtianz.com+Porsche+911" target="_blank" rel="noopener">Porsche 911</a>
+          <a href="search.html">Advanced search page</a>
+        </div>
+      </div>
+    </section>
+
     <section id="start" class="section reveal">
       <div class="section-heading">
         <p class="eyebrow">Start Here</p>
@@ -103,7 +138,7 @@
         <article class="watch-card"><span>03</span><h3>Markets + Tools</h3><p>Watch AI infrastructure, semiconductor volatility, top movers, public proxies, and clearly disclosed investing-tool links.</p></article>
         <article class="watch-card"><span>04</span><h3>World Cup 2026</h3><p>Follow fan zones, local watch-party energy, team storylines, and D.C.-area experiences.</p></article>
         <article class="watch-card"><span>05</span><h3>Performance Cars</h3><p>Sports cars, Porsche 911s, BMW M, Lexus F, EV performance, car news, and enthusiast buying signals.</p></article>
-        <article class="watch-card"><span>06</span><h3>XTIANZ Signal</h3><p>A weekly snapshot format: what moved, why it matters, what to watch next, and where to read more.</p></article>
+        <article class="watch-card"><span>06</span><h3>Search + Signal</h3><p>Search XTIANZ topics, then use the weekly signal format for what moved, why it matters, and what to watch next.</p></article>
       </div>
     </section>
 
@@ -472,6 +507,20 @@
       </div>
     </section>
 
+
+    <section id="adsense" class="section reveal trust-section">
+      <div class="section-heading">
+        <p class="eyebrow">AdSense Ready</p>
+        <h2>Built for a cleaner ad experience.</h2>
+        <p>XTIANZ now includes AdSense Auto Ads code, an <code>ads.txt</code> file, a Privacy Policy, About page, Contact page, and a clear investing/referral disclaimer.</p>
+      </div>
+      <div class="card-grid trust-grid">
+        <article class="watch-card"><span>Ads</span><h3>Auto Ads installed</h3><p>Google can place ads after the domain is approved in AdSense. Keep ads light so the site still feels premium.</p></article>
+        <article class="watch-card"><span>Policy</span><h3>Privacy page added</h3><p>The Privacy Policy explains cookies, Google ads, third-party vendors, and visitor choices.</p></article>
+        <article class="watch-card"><span>Trust</span><h3>About + Contact added</h3><p>These pages make the site look more complete to visitors, search engines, and ad review systems.</p></article>
+      </div>
+    </section>
+
     <section id="roadmap" class="section reveal roadmap-section">
       <div class="section-heading">
         <p class="eyebrow">Next Enhancements</p>
@@ -479,7 +528,7 @@
         <p>Future upgrades that would make the site feel more like a serious AI, markets, sports-culture, and performance-car media hub.</p>
       </div>
       <div class="card-grid roadmap-grid">
-        <article class="watch-card"><span>Search</span><h3>Site search + topic tags</h3><p>Add a fast search box and tags for AI, MCP, MANGOS, stocks, World Cup, Porsche, BMW, Lexus, and EV performance.</p></article>
+        <article class="watch-card"><span>Search</span><h3>Search is live</h3><p>The site now includes Google-powered search and quick topic tags. Next step: add your Programmable Search Engine ID for embedded monetized search.</p></article>
         <article class="watch-card"><span>Pages</span><h3>Dedicated deep-dive pages</h3><p>Create separate pages for MCP basics, MANGOS companies, car watchlists, World Cup D.C. guide, and market movers.</p></article>
         <article class="watch-card"><span>Charts</span><h3>Market heat map</h3><p>Add a visual AI-stock heat map for NVDA, META, GOOGL, MSFT, AMD, AVGO, PLTR, SMH, and QQQ.</p></article>
         <article class="watch-card"><span>DC</span><h3>World Cup DMV guide</h3><p>Build a local guide for D.C., Northern Virginia, bars, fan zones, Metro tips, and watch-party hotspots.</p></article>
@@ -492,6 +541,11 @@
   <footer class="site-footer">
     <p>© <span id="year"></span> XTIANZ.com — AI, MCP, MANGOS, Markets, Tools, World Cup 2026 & Performance Cars.</p>
     <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="search.html">Search</a>
       <a href="#top">Back to top ↑</a>
     </div>
   </footer>
