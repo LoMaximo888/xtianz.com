@@ -1,6 +1,6 @@
-# XTIANZ v14 — GitHub Pages + AdSense Head Script
+# XTIANZ v15 — GitHub Pages + AdSense Head Script
 
-This version removes the visible AdSense/search banner added in v13 and keeps only the Google AdSense script inside the `<head>` tags, plus `ads.txt`, privacy/about/contact/disclaimer pages, and a legacy search page.
+This version removes the visible “AdSense Ready” homepage section and keeps only the Google AdSense script inside the `<head>` tags, plus `ads.txt`, privacy/about/contact/disclaimer pages, and a legacy search page.
 
 ## Files included
 
@@ -20,7 +20,7 @@ This version removes the visible AdSense/search banner added in v13 and keeps on
 1. Extract the ZIP.
 2. Upload all extracted files and folders to `github.com/lomaximo888/xtianz.com`.
 3. Replace existing files.
-4. Commit with: `Deploy XTIANZ v14 AdSense head script only`.
+4. Commit with: `Deploy XTIANZ v15 remove AdSense Ready section`.
 5. After deployment, verify:
    - `https://xtianz.com/ads.txt`
    - `https://xtianz.com/privacy.html`
@@ -47,3 +47,8 @@ Removed the visible AdSense unit from `index.html` and kept this script in the `
 ```html
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9242762673194411" crossorigin="anonymous"></script>
 ```
+
+
+## v15 change
+
+Removed the visible “AdSense Ready” section from the homepage while keeping the AdSense script in the `<head>` tags.
