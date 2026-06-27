@@ -1,4 +1,4 @@
-# XTIANZ v10 — GitHub Pages + AdSense Ready
+# XTIANZ v12 — GitHub Pages + AdSense Ready
 
 This version adds the Google AdSense Auto Ads script, `ads.txt`, privacy/about/contact/disclaimer pages, and a search page.
 
@@ -20,7 +20,7 @@ This version adds the Google AdSense Auto Ads script, `ads.txt`, privacy/about/c
 1. Extract the ZIP.
 2. Upload all extracted files and folders to `github.com/lomaximo888/xtianz.com`.
 3. Replace existing files.
-4. Commit with: `Deploy XTIANZ v10 AdSense and Search`.
+4. Commit with: `Deploy XTIANZ v12 AdSense and Search`.
 5. After deployment, verify:
    - `https://xtianz.com/ads.txt`
    - `https://xtianz.com/privacy.html`
@@ -39,3 +39,10 @@ google.com, pub-9242762673194411, DIRECT, f08c47fec0942fa0
 ## Search
 
 The site search works now using Google site search. For embedded search results and possible AdSense for Search integration, create a Google Programmable Search Engine and replace `YOUR_PROGRAMMABLE_SEARCH_ENGINE_ID` in `search.html` with your Search Engine ID.
+
+
+## v12 AdSense banner update
+
+This version keeps the AdSense Auto Ads loader in the page `<head>` and adds a 728x90 AdSense display ad unit near the top of the homepage. The ad unit uses publisher `ca-pub-9242762673194411` and slot `9217823721`.
+
+Note: the provided code is a display ad unit, not a Google search box.
