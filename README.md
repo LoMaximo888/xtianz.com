@@ -1,6 +1,6 @@
-# XTIANZ v15 — GitHub Pages + AdSense Head Script
+# XTIANZ v16 — GitHub Pages + AdSense 728x90 Leaderboard
 
-This version removes the visible “AdSense Ready” homepage section and keeps only the Google AdSense script inside the `<head>` tags, plus `ads.txt`, privacy/about/contact/disclaimer pages, and a legacy search page.
+This version keeps the old visible AdSense setup/placeholder section removed, keeps the Google AdSense loader script inside the `<head>` tags, and adds a 728x90 leaderboard ad unit near the top of the homepage using ad slot `9217823721`.
 
 ## Files included
 
@@ -20,7 +20,7 @@ This version removes the visible “AdSense Ready” homepage section and keeps 
 1. Extract the ZIP.
 2. Upload all extracted files and folders to `github.com/lomaximo888/xtianz.com`.
 3. Replace existing files.
-4. Commit with: `Deploy XTIANZ v15 remove AdSense Ready section`.
+4. Commit with: `Deploy XTIANZ v16 AdSense leaderboard`.
 5. After deployment, verify:
    - `https://xtianz.com/ads.txt`
    - `https://xtianz.com/privacy.html`
@@ -38,7 +38,7 @@ google.com, pub-9242762673194411, DIRECT, f08c47fec0942fa0
 
 ## Search and visible ad units
 
-The internal Google site-search box and the hardcoded 300x250/728x90 visible AdSense units have been removed. Only the AdSense loader script remains in the `<head>` section of every HTML page.
+The internal Google site-search box remains removed. The homepage includes a single visible 728x90 AdSense leaderboard unit near the top. The AdSense loader script remains in the `<head>` section of every HTML page.
 
 ## v14 change
 
@@ -51,4 +51,15 @@ Removed the visible AdSense unit from `index.html` and kept this script in the `
 
 ## v15 change
 
-Removed the visible “AdSense Ready” section from the homepage while keeping the AdSense script in the `<head>` tags.
+The visible AdSense setup/placeholder section is not present on the homepage; only the clean sponsored leaderboard placement appears near the top.
+
+
+## v16 visible ad unit
+
+Added a 728x90 Google AdSense unit near the top of `index.html`:
+
+- Publisher ID: `ca-pub-9242762673194411`
+- Ad slot: `9217823721`
+- Placement: near the top of the homepage, after the hero/ticker area and before the Start Here section
+
+The loader script is kept once in the `<head>` to avoid duplicate loading.
