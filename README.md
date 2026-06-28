@@ -63,3 +63,14 @@ Added a 728x90 Google AdSense unit near the top of `index.html`:
 - Placement: near the top of the homepage, after the hero/ticker area and before the Start Here section
 
 The loader script is kept once in the `<head>` to avoid duplicate loading.
+
+
+## XTIANZ v17 Update
+
+This version adds the Google Custom Search section near the top of the homepage, below the topic ticker and above the sponsored 728x90 AdSense banner. The search page also includes the same Google CSE integration.
+
+Commit message suggestion:
+
+```text
+Deploy XTIANZ v17 Google Search
+```
