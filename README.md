@@ -65,12 +65,15 @@ Added a 728x90 Google AdSense unit near the top of `index.html`:
 The loader script is kept once in the `<head>` to avoid duplicate loading.
 
 
-## XTIANZ v17 Update
+## XTIANZ v18 Search Fix
 
-This version adds the Google Custom Search section near the top of the homepage, below the topic ticker and above the sponsored 728x90 AdSense banner. The search page also includes the same Google CSE integration.
+This version removes the blank Google CSE widget that used `ca-pub-9242762673194411` as the `cx` value. That value is your AdSense publisher ID, not a Google Programmable Search Engine ID.
 
-Commit message suggestion:
+What is included now:
 
-```text
-Deploy XTIANZ v17 Google Search
-```
+- A visible Google search form near the top of the homepage.
+- A working `search.html` page.
+- The AdSense script remains in the `<head>` of each page.
+- The 728x90 AdSense leaderboard from v16 remains near the top of the homepage.
+
+To use the true embedded Google Programmable Search widget later, create a Programmable Search Engine in Google and replace the form with Google’s generated code using the real Search Engine ID.

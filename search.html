@@ -3,28 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="noindex" />
-  <title>XTIANZ | Search Not Active</title>
-  <link rel="canonical" href="https://xtianz.com/" />
+  <title>XTIANZ | Search</title>
+  <meta name="description" content="Search Google from XTIANZ for AI, MCP, MANGOS, markets, World Cup 2026, performance cars, and technology trends." />
+  <link rel="canonical" href="https://xtianz.com/search.html" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/styles.css" />
   <!-- Google AdSense Auto Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9242762673194411" crossorigin="anonymous"></script>
 </head>
 <body>
-  <main class="simple-page">
-    <section class="simple-hero glass">
-      <p class="eyebrow">XTIANZ</p>
-      <h1>Search not active.</h1>
-      <p>XTIANZ does not currently use an internal site-search box. The AdSense script remains installed in the page head for Google ads and verification.</p>
-      <div class="hero-actions"><a class="button primary" href="index.html">Go to homepage</a></div>
+  <main class="page-main">
+    <section class="page-hero glass">
+      <p class="eyebrow">XTIANZ Search</p>
+      <h1>Search Google from XTIANZ.</h1>
+      <p>Use this working Google search form to explore AI, MCP, MANGOS, markets, World Cup 2026, performance cars, and tech news. It opens results in a new tab.</p>
+      <form class="site-search-form" action="https://www.google.com/search" method="get" target="_blank" rel="noopener">
+        <label class="sr-only" for="xtianz-search-page-input">Search Google</label>
+        <input id="xtianz-search-page-input" type="search" name="q" placeholder="Search Google from XTIANZ..." autocomplete="off" />
+        <button class="button primary" type="submit">Search Google</button>
+      </form>
+      <div class="quick-search-tags" aria-label="Popular searches">
+        <a href="https://www.google.com/search?q=AI+MCP+latest+trends" target="_blank" rel="noopener">AI + MCP</a>
+        <a href="https://www.google.com/search?q=Meta+Anthropic+Nvidia+Google+OpenAI+SpaceX+AI+news" target="_blank" rel="noopener">MANGOS</a>
+        <a href="https://www.google.com/search?q=top+tech+stock+movers+today" target="_blank" rel="noopener">Tech movers</a>
+        <a href="https://www.google.com/search?q=World+Cup+2026+Washington+DC+fan+zone" target="_blank" rel="noopener">D.C. World Cup</a>
+        <a href="https://www.google.com/search?q=latest+sports+car+news" target="_blank" rel="noopener">Sports cars</a>
+      </div>
+      <p class="ad-note">Important: the previous embedded Google CSE code was blank because it used the AdSense publisher ID as the <code>cx</code> value. Google Programmable Search requires its own Search Engine ID.</p>
+      <div class="hero-actions"><a class="button ghost" href="index.html">Back to homepage</a></div>
     </section>
-  <!-- Xtianz Google Search -->
-      <section class="search-section google-cse-section embedded-search">
-        <h2>Search Xtianz</h2>
-        <script async src="https://cse.google.com/cse.js?cx=ca-pub-9242762673194411"></script>
-        <div class="gcse-search"></div>
-      </section>
   </main>
 </body>
 </html>

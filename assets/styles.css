@@ -737,31 +737,3 @@ code {
   .leaderboard-ad-card { padding-inline: 12px; }
   .leaderboard-ad-scroll { justify-content: flex-start; }
 }
-
-
-/* XTIANZ v17: Google Custom Search section */
-.google-cse-section {
-  margin: 26px auto 10px;
-  padding: 0;
-}
-.google-cse-card {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 22px;
-  border-radius: 24px;
-}
-.google-cse-card h2,
-.embedded-search h2 {
-  margin: 0 0 8px;
-}
-.google-cse-card p {
-  color: var(--muted);
-  margin: 0 0 14px;
-}
-.google-cse-section .gsc-control-cse {
-  border-radius: 18px;
-  overflow: hidden;
-}
-@media (max-width: 760px) {
-  .google-cse-card { padding: 16px; }
-}

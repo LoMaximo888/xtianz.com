@@ -94,16 +94,28 @@
       </div>
     </section>
 
-    <!-- Xtianz Google Search -->
-    <section class="search-section google-cse-section reveal">
-      <div class="google-cse-card glass">
-        <h2>Search Xtianz</h2>
-        <p>Use Google Search to discover XTIANZ topics across AI, MCP, MANGOS, markets, World Cup 2026, and performance cars.</p>
-        <script async src="https://cse.google.com/cse.js?cx=ca-pub-9242762673194411"></script>
-        <div class="gcse-search"></div>
+    <!-- Working Google Search form: searches the wider web from XTIANZ.
+         For embedded/monetized Programmable Search, replace this form later with Google CSE code using a real Search Engine ID, not ca-pub. -->
+    <section class="search-section reveal" aria-label="Search Google from XTIANZ">
+      <div class="search-panel glass">
+        <p class="eyebrow">Google Search</p>
+        <h2>Search the web from XTIANZ.</h2>
+        <p>Use this search bar to look up AI, MCP, MANGOS, markets, World Cup 2026, performance cars, and other topics on Google.</p>
+        <form class="site-search-form" action="https://www.google.com/search" method="get" target="_blank" rel="noopener">
+          <label class="sr-only" for="xtianz-google-search">Search Google</label>
+          <input id="xtianz-google-search" type="search" name="q" placeholder="Search Google for AI, MCP, Nvidia, SpaceX, sports cars..." autocomplete="off" />
+          <button class="button primary" type="submit">Search Google</button>
+        </form>
+        <div class="quick-search-tags" aria-label="Popular searches">
+          <a href="https://www.google.com/search?q=AI+MCP+latest+trends" target="_blank" rel="noopener">AI + MCP</a>
+          <a href="https://www.google.com/search?q=Nvidia+stock+news+today" target="_blank" rel="noopener">Nvidia news</a>
+          <a href="https://www.google.com/search?q=SpaceX+latest+news" target="_blank" rel="noopener">SpaceX</a>
+          <a href="https://www.google.com/search?q=World+Cup+2026+Washington+DC+fan+zone" target="_blank" rel="noopener">DC World Cup</a>
+          <a href="https://www.google.com/search?q=best+sports+cars+2026" target="_blank" rel="noopener">Sports cars</a>
+        </div>
+        <p class="ad-note">Note: this visible bar searches Google immediately. Google Programmable Search monetization requires a separate Search Engine ID from Google; the AdSense publisher ID alone will not render the search widget.</p>
       </div>
     </section>
-
 
     <section class="leaderboard-ad-section reveal" aria-label="Sponsored advertisement">
       <div class="leaderboard-ad-card glass">
