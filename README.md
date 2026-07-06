@@ -51,7 +51,7 @@ Removed the visible AdSense unit from `index.html` and kept this script in the `
 
 ## v15 change
 
-The visible AdSense setup/placeholder section is not present on the homepage; only the clean sponsored leaderboard placement appears near the top.
+The visible AdSense setup/placeholder section is not present on the homepage; the leaderboard ad placement appears near the top without a visible sponsored label.
 
 
 ## v16 visible ad unit
