@@ -1,4 +1,4 @@
-# XTIANZ v23 — AdSense Approval Edition
+# XTIANZ v24 — Content update
 
 This version focuses on resolving Google AdSense "low value content" concerns by making XTIANZ a content-first site.
 
@@ -19,7 +19,7 @@ This version focuses on resolving Google AdSense "low value content" concerns by
 3. Click **Add file → Upload files**.
 4. Upload the extracted files and folders, not the ZIP.
 5. Replace existing files.
-6. Commit with: `Deploy XTIANZ v23 AdSense Approval Edition`.
+6. Commit with: `Deploy XTIANZ v24 remove homepage status row`.
 
 ## Before requesting AdSense review again
 
