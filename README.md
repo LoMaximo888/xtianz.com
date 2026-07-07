@@ -1,4 +1,4 @@
-# XTIANZ v20 — AdSense Approval Edition
+# XTIANZ v21 — AdSense Approval Edition
 
 This version focuses on resolving Google AdSense "low value content" concerns by making XTIANZ a content-first site.
 
@@ -19,7 +19,7 @@ This version focuses on resolving Google AdSense "low value content" concerns by
 3. Click **Add file → Upload files**.
 4. Upload the extracted files and folders, not the ZIP.
 5. Replace existing files.
-6. Commit with: `Deploy XTIANZ v20 AdSense Approval Edition`.
+6. Commit with: `Deploy XTIANZ v21 AdSense Approval Edition`.
 
 ## Before requesting AdSense review again
 
@@ -33,3 +33,7 @@ Wait for GitHub Pages to finish deploying, then verify:
 - https://xtianz.com/sitemap.xml
 
 Then request another review in Google AdSense.
+
+
+## v21 update
+Updated SpaceX from private/no direct ticker to public/NASDAQ: SPCX across the MANGOS watchlist and related article content.
