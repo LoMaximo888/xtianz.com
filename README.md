@@ -1,54 +1,25 @@
-# XTIANZ v25 — Content update
+# XTIANZ v26 — Editorial Edition
 
-This version focuses on resolving Google AdSense "low value content" concerns by making XTIANZ a content-first site.
+This version is built to address AdSense content quality feedback by making XTIANZ look more like a finished editorial site and less like a monetized dashboard.
 
-## Changes
+## What changed
 
 - Removed visible display ad units from the homepage.
-- Kept the AdSense script in the `<head>` of every page for verification/Auto Ads readiness.
-- Removed broken Google CSE code that used the AdSense publisher ID as a `cx` value.
-- Removed unfinished copy such as "Updating dashboard" and placeholder/future sections.
-- Added 10 original article pages under `/articles/`.
-- Added clearer navigation and internal links.
-- Kept About, Contact, Privacy, Disclaimer, ads.txt, sitemap.xml, robots.txt, CNAME, and .nojekyll.
+- Removed visible referral/affiliate blocks from the current public layout.
+- Removed live market widgets from the current public layout.
+- Kept the AdSense head script and `ads.txt` for site review/verification.
+- Added five category pages: `ai-mcp.html`, `mangos.html`, `markets.html`, `world-cup-2026.html`, and `cars.html`.
+- Added five new original long-form article pages.
+- Updated article disclosures to focus on educational/editorial context.
+- Added manual review dates and clearer editorial positioning.
+- Kept About, Contact, Privacy, Disclaimer, Search, Sitemap, Robots, CNAME, and .nojekyll.
 
-## Upload to GitHub Pages
+## Upload
 
-1. Extract this ZIP.
-2. Go to `github.com/lomaximo888/xtianz.com`.
-3. Click **Add file → Upload files**.
-4. Upload the extracted files and folders, not the ZIP.
-5. Replace existing files.
-6. Commit with: `Deploy XTIANZ v25 remove homepage status row`.
+Upload the extracted files to GitHub Pages and commit with:
 
-## Before requesting AdSense review again
+Deploy XTIANZ v26 clean review edition
 
-Wait for GitHub Pages to finish deploying, then verify:
+## After approval
 
-- https://xtianz.com/
-- https://xtianz.com/articles/what-is-mcp-ai-agents.html
-- https://xtianz.com/privacy.html
-- https://xtianz.com/contact.html
-- https://xtianz.com/ads.txt
-- https://xtianz.com/sitemap.xml
-
-Then request another review in Google AdSense.
-
-
-## v21 update
-Updated SpaceX from private/no direct ticker to public/NASDAQ: SPCX across the MANGOS watchlist and related article content.
-
-
-## v23 update
-
-- Removed the phrase "curated by Chris M." from the About page content.
-
-
-## v25 additions
-
-- Removed visible build/approval wording from the homepage.
-- Added a live TradingView ticker tape and market overview section for AI/MANGOS stocks and ETFs.
-- Added a visitor-facing freshness model explaining evergreen articles + live market/source links.
-- Footer date now updates automatically in the browser.
-
-Note: GitHub Pages is static hosting. The live market panels are embedded from TradingView, while article text remains original and should be manually reviewed when material facts change.
+After approval, consider adding visible ads or referral placements back gradually and only around substantial article content.

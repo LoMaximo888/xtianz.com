@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MCP Security and Governance Checklist for Practical AI Deployments | XTIANZ</title>
+  <meta name="description" content="A practical checklist for thinking about MCP security, tool permissions, logging, and human approval in AI workflows." />
+  <meta name="theme-color" content="#070817" />
+  <meta property="og:title" content="MCP Security and Governance Checklist for Practical AI Deployments | XTIANZ" />
+  <meta property="og:description" content="A practical checklist for thinking about MCP security, tool permissions, logging, and human approval in AI workflows." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://xtianz.com/articles/mcp-security-governance-checklist.html" />
+  <link rel="canonical" href="https://xtianz.com/articles/mcp-security-governance-checklist.html" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9242762673194411" crossorigin="anonymous"></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="orb orb-one" aria-hidden="true"></div>
+  <div class="orb orb-two" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="XTIANZ home"><img src="/assets/logo.svg" alt="XTIANZ logo" /><span>XTIANZ</span></a>
+    <div class="header-actions">
+      <nav id="site-nav" class="site-nav"><a href="/">Home</a><a href="/ai-mcp.html">AI + MCP</a><a href="/mangos.html">MANGOS</a><a href="/markets.html">Markets</a><a href="/world-cup-2026.html">World Cup</a><a href="/cars.html">Cars</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav>
+      <a class="header-ig" href="https://www.instagram.com/xtianz/" target="_blank" rel="noopener" aria-label="XTIANZ Instagram profile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="5"></rect><circle cx="12" cy="12" r="3.6"></circle><circle cx="17" cy="7" r="1"></circle></svg></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
+  </header>
+<main id="content" class="article-layout">
+  <article class="article-page glass reveal">
+    <p class="eyebrow">AI + MCP</p>
+    <h1>MCP Security and Governance Checklist for Practical AI Deployments</h1>
+    <p class="article-meta">By XTIANZ Editorial Desk · Last reviewed July 8, 2026 · Educational content</p>
+    <p class="article-dek">A practical checklist for thinking about MCP security, tool permissions, logging, and human approval in AI workflows.</p>
+    <div class="article-body"><p>MCP can make AI systems more useful by connecting them to tools and data, but usefulness is only half the story. The other half is control. When an AI client can access external systems, every connection should be treated as a permissioned capability. A simple documentation lookup is different from a database query. A database query is different from a workflow that changes production settings. The governance model needs to recognize those differences.</p>
+<p>The first checkpoint is identity. An MCP-enabled workflow should not become a shortcut around normal access rules. The user, the AI client, the MCP server, and the downstream system all need a clear identity story. Ideally, the workflow should inherit or enforce user permissions rather than giving a broad shared credential too much power. If a human could not access a dataset directly, an AI assistant should not magically gain access on that person’s behalf.</p>
+<p>The second checkpoint is scope. Each MCP server should have a specific purpose. A server that searches approved documentation is easier to govern than one that exposes many unrelated tools. Narrow scope makes testing easier, reduces accidental misuse, and gives security teams a clearer review path. If a tool does not need write access, do not give it write access. If a tool only needs a subset of records, do not expose the entire system.</p>
+<p>The third checkpoint is prompt-injection defense. AI systems can be influenced by instructions hidden inside documents, websites, tickets, or other data they read. A malicious instruction might tell the model to ignore policy, reveal secrets, or call a tool incorrectly. Teams should assume that external content can contain hostile instructions and design workflows so the model cannot override security boundaries just because text told it to.</p>
+<p>The fourth checkpoint is logging. If an agent reads a document, calls a tool, or suggests an action, the organization should be able to reconstruct what happened. Logs do not need to expose unnecessary sensitive content, but they should capture enough context to support troubleshooting and review. Without logging, it is hard to know whether a mistake came from bad data, model behavior, tool configuration, or user instruction.</p>
+<p>The fifth checkpoint is human approval. High-impact actions should have a human in the loop, especially early in adoption. An agent can draft, summarize, compare, and recommend, but approvals should be explicit when money, access, infrastructure, legal commitments, customer communications, or sensitive data are involved. The safest agent patterns make the human decision easier without hiding the decision itself.</p>
+<h2>What to watch next</h2><p>A good MCP implementation should feel boring in the right way: documented, permissioned, logged, tested, and limited to clear use cases before it expands.</p></div>
+    <section class="article-sources"><h2>Useful source links</h2><ul><li><a href="https://modelcontextprotocol.io/docs/getting-started/intro" target="_blank" rel="noopener">Model Context Protocol documentation</a></li></ul></section>
+    <section class="article-disclosure"><h2>Disclosure</h2><p>XTIANZ content is for education and commentary. Market discussions are not personalized investment advice. Articles are manually reviewed and may link to third-party sources for additional context.</p></section>
+  </article>
+  <aside class="article-sidebar reveal"><div class="glass side-card"><h2>Read next</h2><ul><li><a href="/articles/what-is-mcp-ai-agents.html">What Is MCP and Why It Matters for AI Agents </a></li><li><a href="/articles/mangos-explained-ai-companies.html">MANGOS Explained: Meta, Anthropic, Nvidia, Google, OpenAI and SpaceX </a></li><li><a href="/articles/nvidia-ai-infrastructure-boom.html">How Nvidia Became the Center of the AI Infrastructure Boom </a></li><li><a href="/articles/private-ai-companies-openai-anthropic-spacex.html">How to Track AI Giants: OpenAI, Anthropic and SpaceX After the IPO </a></li><li><a href="/articles/ai-stock-movers-watchlist.html">Top AI Stock Movers: What Actually Moves the Market </a></li><li><a href="/articles/world-cup-2026-dc-fan-guide.html">World Cup 2026 in Washington D.C.: Fan Zones, Heat, Metro and Match-Day Energy </a></li><li><a href="/articles/northern-virginia-world-cup-2026-plan.html">Best Ways to Experience World Cup 2026 from Northern Virginia </a></li><li><a href="/articles/sports-cars-worth-watching-2026.html">Sports Cars Worth Watching in 2026 </a></li><li><a href="/articles/used-sports-car-buying-signals.html">What Makes a Good Used Sports Car Buy in 2026 </a></li><li><a href="/articles/xtianz-weekly-signal-method.html">The XTIANZ Weekly Signal: A Simple Method for Tracking AI, Markets, Soccer and Cars </a></li></ul></div><div class="glass side-card"><h2>Topics</h2><p>AI, MCP, MANGOS, markets, World Cup 2026, and performance cars.</p><a class="button ghost" href="/">Back home</a></div></aside>
+</main>
+  <footer class="site-footer">
+    <div>
+      <a class="footer-brand" href="/"><img src="/assets/logo.svg" alt="" /> XTIANZ</a>
+      <p>Original explainers and practical guides for AI, MCP, MANGOS, markets, World Cup 2026, and performance cars.</p>
+      <p class="fineprint">Last site update: July 8, 2026. Educational content only. No personalized financial advice.</p>
+    </div>
+    <nav>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/sitemap.xml">Sitemap</a>
+    </nav>
+  </footer>
+  <script src="/assets/app.js"></script>
+</body>
+</html>
