@@ -1,4 +1,4 @@
-# XTIANZ v24 — Content update
+# XTIANZ v25 — Content update
 
 This version focuses on resolving Google AdSense "low value content" concerns by making XTIANZ a content-first site.
 
@@ -19,7 +19,7 @@ This version focuses on resolving Google AdSense "low value content" concerns by
 3. Click **Add file → Upload files**.
 4. Upload the extracted files and folders, not the ZIP.
 5. Replace existing files.
-6. Commit with: `Deploy XTIANZ v24 remove homepage status row`.
+6. Commit with: `Deploy XTIANZ v25 remove homepage status row`.
 
 ## Before requesting AdSense review again
 
@@ -42,3 +42,13 @@ Updated SpaceX from private/no direct ticker to public/NASDAQ: SPCX across the M
 ## v23 update
 
 - Removed the phrase "curated by Chris M." from the About page content.
+
+
+## v25 additions
+
+- Removed visible build/approval wording from the homepage.
+- Added a live TradingView ticker tape and market overview section for AI/MANGOS stocks and ETFs.
+- Added a visitor-facing freshness model explaining evergreen articles + live market/source links.
+- Footer date now updates automatically in the browser.
+
+Note: GitHub Pages is static hosting. The live market panels are embedded from TradingView, while article text remains original and should be manually reviewed when material facts change.

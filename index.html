@@ -39,7 +39,7 @@
       <div class="hero-actions"><a class="button primary" href="#articles">Read articles</a><a class="button ghost" href="/about.html">About XTIANZ</a></div>
     </div>
     <aside class="hero-panel glass reveal" aria-label="Editorial signal panel">
-      <div class="panel-topline"><span class="status-dot"></span><span>AdSense Approval Edition</span></div>
+      <div class="panel-topline"><span class="status-dot"></span><span>Fresh reads + live signals</span></div>
       <h2>Latest XTIANZ Reads</h2>
       <ul class="latest-list"><li><a href="/articles/what-is-mcp-ai-agents.html">What Is MCP and Why It Matters for AI Agents</a><span>AI + MCP</span></li><li><a href="/articles/mangos-explained-ai-companies.html">MANGOS Explained: Meta, Anthropic, Nvidia, Google, OpenAI and SpaceX</a><span>MANGOS</span></li><li><a href="/articles/nvidia-ai-infrastructure-boom.html">How Nvidia Became the Center of the AI Infrastructure Boom</a><span>Markets</span></li><li><a href="/articles/private-ai-companies-openai-anthropic-spacex.html">How to Track AI Giants: OpenAI, Anthropic and SpaceX After the IPO</a><span>AI + Public Markets</span></li></ul>
     </aside>
@@ -48,7 +48,7 @@
   <section class="ticker-strip" aria-label="Key topics"><div class="ticker-track"><span>OpenAI</span><span>Anthropic</span><span>Nvidia</span><span>Google</span><span>Meta</span><span>SpaceX</span><span>MCP</span><span>AI Agents</span><span>Data Centers</span><span>World Cup 2026</span><span>DC Fan Zone</span><span>Porsche 911</span><span>BMW M</span><span>Lexus F</span><span>Supercars</span><span>OpenAI</span><span>Anthropic</span><span>Nvidia</span><span>Google</span><span>Meta</span><span>SpaceX</span><span>MCP</span><span>AI Agents</span><span>Data Centers</span><span>World Cup 2026</span><span>DC Fan Zone</span><span>Porsche 911</span><span>BMW M</span><span>Lexus F</span><span>Supercars</span></div></section>
 
   <section id="articles" class="section reveal">
-    <div class="section-heading"><p class="eyebrow">Original Articles</p><h2>Start with complete guides, not empty widgets.</h2><p>This edition was rebuilt around original articles and clear internal navigation to make XTIANZ more useful for readers and stronger for AdSense review.</p></div>
+    <div class="section-heading"><p class="eyebrow">Original Articles</p><h2>Evergreen guides with live companion sources.</h2><p>Start with complete explainers, then use the live market board, official source links, and latest-news destinations to verify what changed today.</p></div>
     <div class="article-grid"><article class="article-card">
   <p class="eyebrow">AI + MCP</p>
   <h3><a href="/articles/what-is-mcp-ai-agents.html">What Is MCP and Why It Matters for AI Agents</a></h3>
@@ -164,17 +164,95 @@
     <div class="glass feature-card"><p class="eyebrow">Tools I Use</p><h3>Alinea Investing</h3><p>Referral disclosure: this is my personal Alinea referral link. I may receive a reward if you sign up and meet Alinea’s requirements. This is not financial advice.</p><a class="button primary" href="https://alinea-referral.up.railway.app?code=ARP4R" target="_blank" rel="noopener">Try Alinea</a></div>
   </section>
 
+  <section class="section reveal" aria-labelledby="live-market-title">
+    <div class="section-heading"><p class="eyebrow">Live Market Board</p><h2 id="live-market-title">AI, MANGOS, chips, and market trend charts.</h2><p>These live market panels are embedded from TradingView and update from market data sources. Use them as a quick dashboard, then verify prices and filings with your brokerage or official sources before making any decision.</p></div>
+    <div class="market-widget glass">
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+        {
+          "symbols": [
+            {"proName":"NASDAQ:NVDA","title":"Nvidia"},
+            {"proName":"NASDAQ:META","title":"Meta"},
+            {"proName":"NASDAQ:GOOGL","title":"Google"},
+            {"proName":"NASDAQ:MSFT","title":"Microsoft"},
+            {"proName":"NASDAQ:SPCX","title":"SpaceX"},
+            {"proName":"NASDAQ:AMD","title":"AMD"},
+            {"proName":"NASDAQ:AVGO","title":"Broadcom"},
+            {"proName":"NASDAQ:PLTR","title":"Palantir"},
+            {"proName":"NASDAQ:SMH","title":"SMH ETF"},
+            {"proName":"NASDAQ:QQQ","title":"QQQ"}
+          ],
+          "showSymbolLogo": true,
+          "isTransparent": true,
+          "displayMode": "adaptive",
+          "colorTheme": "dark",
+          "locale": "en"
+        }
+        </script>
+      </div>
+    </div>
+    <div class="market-widget glass market-overview-widget">
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+        {
+          "colorTheme": "dark",
+          "dateRange": "12M",
+          "showChart": true,
+          "locale": "en",
+          "largeChartUrl": "",
+          "isTransparent": true,
+          "showSymbolLogo": true,
+          "showFloatingTooltip": false,
+          "width": "100%",
+          "height": "560",
+          "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
+          "plotLineColorFalling": "rgba(41, 98, 255, 1)",
+          "gridLineColor": "rgba(240, 243, 250, 0)",
+          "scaleFontColor": "rgba(219, 219, 219, 1)",
+          "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
+          "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+          "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
+          "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+          "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
+          "tabs": [
+            {"title":"AI + MANGOS","symbols":[
+              {"s":"NASDAQ:NVDA","d":"Nvidia"},
+              {"s":"NASDAQ:META","d":"Meta"},
+              {"s":"NASDAQ:GOOGL","d":"Alphabet"},
+              {"s":"NASDAQ:MSFT","d":"Microsoft"},
+              {"s":"NASDAQ:SPCX","d":"SpaceX"}
+            ]},
+            {"title":"Chips + Software","symbols":[
+              {"s":"NASDAQ:AMD","d":"AMD"},
+              {"s":"NASDAQ:AVGO","d":"Broadcom"},
+              {"s":"NASDAQ:PLTR","d":"Palantir"},
+              {"s":"NASDAQ:SMH","d":"VanEck Semiconductor ETF"},
+              {"s":"NASDAQ:QQQ","d":"Nasdaq 100 ETF"}
+            ]}
+          ]
+        }
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" aria-labelledby="freshness-title">
+    <div class="section-heading"><p class="eyebrow">Freshness Model</p><h2 id="freshness-title">How XTIANZ stays current.</h2><p>The article pages stay evergreen and original, while live market widgets and official source links show what is changing right now. That balance keeps the site useful without relying on scraped or copied articles.</p></div>
+    <div class="card-grid"><article class="watch-card"><span>01</span><h3>Evergreen guides</h3><p>Core explainers stay stable and should be manually refreshed when facts materially change.</p></article><article class="watch-card"><span>02</span><h3>Live market data</h3><p>TradingView panels provide current market context for MANGOS, AI chips, software, and ETFs.</p></article><article class="watch-card"><span>03</span><h3>Official source links</h3><p>Company, FIFA, market, and automotive source links give visitors a path to today’s newest details.</p></article></div>
+  </section>
+
   <section id="worldcup" class="section reveal"><div class="section-heading"><p class="eyebrow">World Cup 2026</p><h2>D.C. and Northern Virginia fan planning.</h2><p>Original guides for fan zones, match-day logistics, heat planning, Metro choices, watch parties, and family-friendly viewing.</p></div><div class="card-grid"><article class="feature-card glass"><h3>D.C. Fan Zone Guide</h3><p>National Mall planning, heat, transit, timing, and crowd strategy.</p><a href="/articles/world-cup-2026-dc-fan-guide.html">Read guide →</a></article><article class="feature-card glass"><h3>Northern Virginia Plan</h3><p>How to choose watch spots, D.C. days, and regional travel options.</p><a href="/articles/northern-virginia-world-cup-2026-plan.html">Read guide →</a></article></div></section>
 
   <section id="cars" class="section reveal"><div class="section-heading"><p class="eyebrow">Performance Cars</p><h2>Sports-car culture with practical buying signals.</h2><p>Performance is not just horsepower. XTIANZ tracks feel, usability, reliability, depreciation, and enthusiast value.</p></div><div class="card-grid"><article class="feature-card glass"><h3>Sports Cars Worth Watching</h3><p>Porsche 911, BMW M, Lexus F, Corvette, Acura Type S, and EV performance.</p><a href="/articles/sports-cars-worth-watching-2026.html">Read watchlist →</a></article><article class="feature-card glass"><h3>Used Sports Car Signals</h3><p>Service history, inspections, ownership costs, and buying discipline.</p><a href="/articles/used-sports-car-buying-signals.html">Read guide →</a></article></div></section>
 
-  <section class="section reveal"><div class="section-heading"><p class="eyebrow">Editorial Improvements</p><h2>What changed in this AdSense-focused version.</h2></div><div class="card-grid"><article class="watch-card"><span>✓</span><h3>Removed weak elements</h3><p>No “updating dashboard,” no empty CSE widget, no visible display ad block, and no future-placeholder copy.</p></article><article class="watch-card"><span>✓</span><h3>Added depth</h3><p>Ten original article pages with complete paragraphs, internal links, categories, descriptions, and source links.</p></article><article class="watch-card"><span>✓</span><h3>Improved navigation</h3><p>Clear pages for About, Contact, Privacy, Disclaimer, Articles, and topic sections.</p></article></div></section>
 </main>
   <footer class="site-footer">
     <div>
       <a class="footer-brand" href="/"><img src="/assets/logo.svg" alt="" /> XTIANZ</a>
       <p>Original explainers and watchlists for AI, MCP, MANGOS, markets, World Cup 2026, and performance cars.</p>
-      <p class="fineprint">Last site update: July 6, 2026. Educational content only. No personalized financial advice.</p>
+      <p class="fineprint">Last site update: <span data-current-date>July 7, 2026</span>. Educational content only. No personalized financial advice.</p>
     </div>
     <nav>
       <a href="/about.html">About</a>
