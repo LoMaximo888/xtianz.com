@@ -1,14 +1,8 @@
-# XTIANZ v30 — AI Signal Lab
+# XTIANZ v31 — Stack Map Fix
 
-Upload the extracted files and folders to the root of the GitHub Pages repository.
+This build corrects the homepage `#stack-map` anchor and adds the missing interactive AI stack section.
 
-## Major additions
-- Three-pillar editorial homepage and bento article layout
-- Interactive AI stack map
-- Interactive MANGOS orbit and comparison filters
-- AI Lab with MCP readiness checklist, agent maturity map, tool comparison, and glossary
-- Command-menu search (Cmd/Ctrl + K)
-- Enhanced article templates with reading time, quick summary, takeaways, table of contents, and review history
-- Editorial policy and GitHub-based correction workflow
+## Upload
+Upload every extracted file and folder to the root of the GitHub Pages repository and replace the current files.
 
-The AdSense loader remains in the page head. No visible ad units or referral blocks are included.
+Suggested commit message: `Deploy XTIANZ v31 stack map fix`

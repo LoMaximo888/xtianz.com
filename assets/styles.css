@@ -56,3 +56,11 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background:lin
 @media(max-width:1050px){.bento-card:first-child{grid-column:span 12}.bento-card:nth-child(n+2){grid-column:span 6}.lab-preview-grid,.compare-grid,.operating-grid{grid-template-columns:1fr 1fr}.pulse-query-row{grid-template-columns:repeat(3,1fr)}.category-hero-v30{grid-template-columns:1fr}.orbit-detail{grid-template-columns:1fr 1fr}.market-board{grid-template-columns:1fr}.market-tabs{grid-template-columns:repeat(5,1fr);border-right:0;border-bottom:1px solid var(--line)}.market-tabs button{text-align:center}.readiness-layout{grid-template-columns:1fr}.maturity-track{grid-template-columns:repeat(3,1fr)}.glossary-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.command-label,.command-trigger kbd{display:none}.lab-hero{min-height:auto}.triptych-grid,.lab-preview-grid,.compare-grid,.operating-grid,.glossary-grid{grid-template-columns:1fr}.bento-card,.bento-card:first-child,.bento-card:nth-child(n+2){grid-column:1/-1;min-height:auto}.stack-lab{grid-template-columns:1fr}.stack-detail{border-left:0;border-top:1px solid var(--line)}.pulse-query-row{grid-template-columns:1fr 1fr}.orbit-detail{grid-template-columns:1fr}.mangos-orbit{width:360px}.mangos-node{min-width:74px;padding:8px;font-size:.75rem}.market-tabs{grid-template-columns:1fr 1fr}.market-two{grid-template-columns:1fr}.maturity-track{grid-template-columns:1fr 1fr}.maturity-needs{grid-template-columns:1fr}.article-sidebar{max-height:none}.site-header{margin:0;border-radius:0;border-left:0;border-right:0;border-top:0}}
 @media(max-width:480px){.pulse-query-row{grid-template-columns:1fr}.mangos-orbit{width:300px}.orbit-ne,.orbit-se{left:84%}.orbit-nw,.orbit-sw{left:16%}.maturity-track{grid-template-columns:1fr}.command-trigger{width:34px;padding:0;justify-content:center}}
+
+/* v31 stack-map correction */
+.stack-map-section{scroll-margin-top:92px}
+.stack-layer strong{display:block;font-size:.96rem;line-height:1.2}
+.stack-layer[aria-pressed="true"]{box-shadow:inset 3px 0 0 var(--cyan)}
+.stack-detail .button-row{margin-top:22px}
+@media(max-width:760px){.stack-buttons{grid-template-columns:1fr 1fr}.stack-layer{grid-template-columns:32px 1fr;min-height:66px}}
+@media(max-width:480px){.stack-buttons{grid-template-columns:1fr}}
