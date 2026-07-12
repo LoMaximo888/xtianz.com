@@ -1,17 +1,13 @@
-# XTIANZ v27 — Modern Magazine Edition
+# XTIANZ v28 — AI Search Pulse Edition
 
-A polished GitHub Pages build for **xtianz.com**.
+Upload all files and folders in this package to the root of the GitHub Pages repository.
 
-## Highlights
-- Futuristic editorial hero and signal map
-- Dated “Today’s Signal” section
-- Visual magazine-style article cards
-- Modern category landing pages
-- MANGOS company capsules with official and Instagram links
-- Reading progress indicator on long-form articles
-- Social sharing image and improved Open Graph metadata
-- Responsive, accessible, lightweight CSS/JavaScript
-- AdSense loader remains in the `<head>`; no visible ad units or referral blocks
+## New in v28
+- Added a modern **Five AI Questions People Keep Searching** section to the homepage.
+- Added the search-interest section to the AI + MCP category page.
+- Added a full original article at `/articles/top-ai-search-questions.html`.
+- Added Article and FAQ structured data to the new guide.
+- Added a methodology note explaining that Google Trends reports relative interest, not absolute worldwide search volume.
+- Updated the sitemap and review dates.
 
-## Deploy
-Extract the ZIP and upload all files and folders to the root of the GitHub repository. Do not upload the ZIP itself.
+The AdSense loader remains in the `<head>` and no visible ad units were added.
