@@ -1,17 +1,14 @@
-# XTIANZ v29 — Focused Technology Edition
+# XTIANZ v30 — AI Signal Lab
 
-This static GitHub Pages package focuses on:
+Upload the extracted files and folders to the root of the GitHub Pages repository.
 
-- AI and generative AI
-- Model Context Protocol (MCP)
-- MANGOS: Meta, Anthropic, Nvidia, Google, OpenAI, and SpaceX
-- AI infrastructure and technology markets
+## Major additions
+- Three-pillar editorial homepage and bento article layout
+- Interactive AI stack map
+- Interactive MANGOS orbit and comparison filters
+- AI Lab with MCP readiness checklist, agent maturity map, tool comparison, and glossary
+- Command-menu search (Cmd/Ctrl + K)
+- Enhanced article templates with reading time, quick summary, takeaways, table of contents, and review history
+- Editorial policy and GitHub-based correction workflow
 
-## Upload
-
-1. Extract this ZIP.
-2. Upload every extracted file and folder to the root of your GitHub repository.
-3. Replace existing files.
-4. Commit with: `Deploy XTIANZ v29 focused technology edition`
-
-The AdSense script remains in the `<head>` and there are no visible ad blocks.
+The AdSense loader remains in the page head. No visible ad units or referral blocks are included.
