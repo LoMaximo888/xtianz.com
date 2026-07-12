@@ -1,13 +1,17 @@
-# XTIANZ v28 — AI Search Pulse Edition
+# XTIANZ v29 — Focused Technology Edition
 
-Upload all files and folders in this package to the root of the GitHub Pages repository.
+This static GitHub Pages package focuses on:
 
-## New in v28
-- Added a modern **Five AI Questions People Keep Searching** section to the homepage.
-- Added the search-interest section to the AI + MCP category page.
-- Added a full original article at `/articles/top-ai-search-questions.html`.
-- Added Article and FAQ structured data to the new guide.
-- Added a methodology note explaining that Google Trends reports relative interest, not absolute worldwide search volume.
-- Updated the sitemap and review dates.
+- AI and generative AI
+- Model Context Protocol (MCP)
+- MANGOS: Meta, Anthropic, Nvidia, Google, OpenAI, and SpaceX
+- AI infrastructure and technology markets
 
-The AdSense loader remains in the `<head>` and no visible ad units were added.
+## Upload
+
+1. Extract this ZIP.
+2. Upload every extracted file and folder to the root of your GitHub repository.
+3. Replace existing files.
+4. Commit with: `Deploy XTIANZ v29 focused technology edition`
+
+The AdSense script remains in the `<head>` and there are no visible ad blocks.
