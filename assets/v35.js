@@ -34,7 +34,7 @@ const extra=[
  {title:'Current AI intelligence brief',meta:'Signals · Protocol · Operations · Infrastructure · Risk',url:'/signals.html'},
  {title:'AI production readiness assessment',meta:'AI Risk · Operating controls',url:'/risk.html#readiness-assessment'},
  {title:'Architecture pattern recommender',meta:'AI Lab · Decision tool',url:'/lab.html#pattern-recommender'},
- {title:'AI Systems Intelligence home',meta:'XTIANZ v35',url:'/'}
+ {title:'AI Systems Intelligence home',meta:'XTIANZ v36',url:'/'}
 ];
 const observer=new MutationObserver(()=>{
  const results=$('[data-command-results]'),input=$('[data-command-input]'); if(!results||!input||results.dataset.v35Enhanced)return;

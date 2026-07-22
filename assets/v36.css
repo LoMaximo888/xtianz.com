@@ -1,0 +1,23 @@
+/* XTIANZ v36 deployment hardening and accessibility layer */
+:where(a,button,input,select,textarea,[tabindex]:not([tabindex="-1"])):focus-visible{
+  outline:3px solid #7df9ff;
+  outline-offset:4px;
+  box-shadow:0 0 0 2px #071018,0 0 0 6px rgba(125,249,255,.32);
+}
+.design-v36 .site-nav a[aria-current="page"]{position:relative;color:#fff;background:rgba(88,231,255,.11)}
+.design-v36 .site-nav a[aria-current="page"]::after{content:"";position:absolute;left:.68rem;right:.68rem;bottom:.32rem;height:2px;border-radius:999px;background:linear-gradient(90deg,#65f0ff,#ad8cff)}
+.design-v36 .site-header{isolation:isolate}
+.design-v36 .site-nav{scrollbar-width:thin}
+@media (min-width:901px) and (max-width:1320px){
+  .design-v36 .site-nav a{font-size:.68rem;padding:.56rem .42rem;letter-spacing:.015em}
+  .design-v36 .command-label,.design-v36 .command-trigger kbd{display:none}
+}
+@media (max-width:900px){
+  .design-v36 .site-nav{max-height:calc(100vh - 92px);overflow:auto}
+  .design-v36 .site-nav a{min-height:44px;display:flex;align-items:center}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .ai-network-bg{display:none!important}
+}
