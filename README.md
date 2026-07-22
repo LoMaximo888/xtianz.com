@@ -1,8 +1,23 @@
-# XTIANZ v31 — Stack Map Fix
+# XTIANZ v35 — AI Systems Intelligence Platform
 
-This build corrects the homepage `#stack-map` anchor and adds the missing interactive AI stack section.
+Build: v35-2026-07-21
 
-## Upload
-Upload every extracted file and folder to the root of the GitHub Pages repository and replace the current files.
+## Highlights
+- Unified site-wide navigation including AI Risk
+- Current evidence brief with confidence and invalidation criteria
+- Eight-layer AI architecture map
+- Architecture pattern recommender
+- Agent deployment advisor
+- Evaluation-plan generator
+- MCP threat-model builder
+- AI workload economics calculator
+- Production-readiness assessment
+- MANGOS comparison discipline
+- Evidence-based markets brief
+- Structured editorial metadata and review history
 
-Suggested commit message: `Deploy XTIANZ v31 stack map fix`
+## Deploy
+Upload all extracted files and folders to the root of the GitHub Pages repository.
+
+Recommended commit message:
+`Deploy XTIANZ v35 AI Systems Intelligence Platform`

@@ -1,0 +1,17 @@
+{
+  "name": "XTIANZ AI Systems Intelligence",
+  "short_name": "XTIANZ",
+  "description": "Architecture, agents, MCP, evaluations, risk, infrastructure, MANGOS, markets, and the DMV AI corridor.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050712",
+  "theme_color": "#050712",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
