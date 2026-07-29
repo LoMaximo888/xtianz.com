@@ -1,40 +1,16 @@
-# XTIANZ v36-2026-07-22
+# XTIANZ v37
 
-AI Systems Intelligence Platform.
-
-## Deploy
-
-Upload every extracted file and folder to the root of the GitHub Pages repository, including hidden folders such as `.github`. Confirm Pages publishes from `main` and `/ (root)`.
-
-After deployment, open `https://xtianz.com/release.json` and confirm the build is `v36-2026-07-22`. See `DEPLOYMENT.md` for the complete checklist.
-
-## Local validation
-
-```bash
-python scripts/validate_site.py
-```
-
-# XTIANZ v35 — AI Systems Intelligence Platform
-
-Build: v35-2026-07-21
+Mobile-first AI Systems Intelligence release.
 
 ## Highlights
-- Unified site-wide navigation including AI Risk
-- Current evidence brief with confidence and invalidation criteria
-- Eight-layer AI architecture map
-- Architecture pattern recommender
-- Agent deployment advisor
-- Evaluation-plan generator
-- MCP threat-model builder
-- AI workload economics calculator
-- Production-readiness assessment
-- MANGOS comparison discipline
-- Evidence-based markets brief
-- Structured editorial metadata and review history
+- Grouped desktop navigation
+- Full-screen mobile drawer
+- Four-item mobile bottom dock
+- Shorter, clearer homepage
+- Swipeable intelligence cards
+- Mobile architecture rail
+- Responsive tables and engineering forms
+- Consolidated CSS and JavaScript assets
+- MCP 2026-07-28 status update
 
-## Deploy
-Upload all extracted files and folders to the root of the GitHub Pages repository.
-
-Recommended commit message:
-`Deploy XTIANZ v35 AI Systems Intelligence Platform`
-
+Upload every file and folder in this package to the repository root.

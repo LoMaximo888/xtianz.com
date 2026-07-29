@@ -1,9 +1,8 @@
 {
   "site": "XTIANZ",
-  "release": "v36",
-  "build": "v36-2026-07-22",
-  "deployedPackageDate": "2026-07-22",
-  "purpose": "AI Systems Intelligence Platform",
+  "release": "v37",
+  "build": "v37-2026-07-29",
+  "deployed": "2026-07-29",
   "requiredPages": [
     "/",
     "/signals.html",
@@ -14,19 +13,7 @@
     "/risk.html",
     "/markets.html",
     "/dmv.html",
-    "/about.html",
-    "/editorial-policy.html",
-    "/privacy.html",
-    "/disclaimer.html",
-    "/contact.html"
+    "/about.html"
   ],
-  "qualityChecks": [
-    "required files",
-    "build markers",
-    "consistent primary navigation",
-    "internal links and assets",
-    "duplicate IDs",
-    "sitemap coverage",
-    "retired-content scan"
-  ]
+  "design": "mobile-first grouped navigation"
 }
