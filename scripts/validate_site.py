@@ -5,10 +5,13 @@ from urllib.parse import urlparse, unquote
 import json, re, sys
 
 ROOT=Path(__file__).resolve().parents[1]
-EXPECTED='v37-2026-07-29'
-REQUIRED=['index.html','signals.html','architecture.html','ai-mcp.html','mangos.html','lab.html','risk.html','markets.html','dmv.html','about.html','editorial-policy.html','privacy.html','disclaimer.html','contact.html','release.json','sitemap.xml','robots.txt','CNAME','assets/site-v37.css','assets/app-v37.js']
-REQUIRED_NAV={'/','/signals.html','/architecture.html','/ai-mcp.html','/mangos.html','/lab.html','/risk.html','/markets.html','/dmv.html','/about.html'}
+EXPECTED='v39-2026-07-29'
+REQUIRED=['index.html','signals.html','architecture.html','ai-mcp.html','claude.html','mangos.html','lab.html','risk.html','markets.html','dmv.html','about.html','editorial-policy.html','privacy.html','disclaimer.html','contact.html','release.json','sitemap.xml','robots.txt','CNAME','assets/site-v38.css','assets/app-v38.js']
+REQUIRED_NAV={'/','/signals.html','/architecture.html','/ai-mcp.html','/claude.html','/mangos.html','/lab.html','/risk.html','/markets.html','/dmv.html','/about.html'}
 RETIRED=[r'World Cup',r'performance cars',r'Alinea Investing',r'Alinea referral']
+ADSENSE_PUB='ca-pub-9242762673194411'
+ADSENSE_SCRIPT='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='+ADSENSE_PUB
+ADSENSE_META=f'<meta name=\"google-adsense-account\" content=\"{ADSENSE_PUB}\"'
 errors=[]
 
 for item in REQUIRED:
@@ -33,6 +36,11 @@ for page in ROOT.rglob('*.html'):
     text=page.read_text(encoding='utf-8')
     if text.lower().count('<!doctype html>')!=1: errors.append(f'{rel}: expected exactly one doctype')
     if 'name="xtianz-build"' not in text or EXPECTED not in text: errors.append(f'{rel}: missing expected build marker')
+    if text.count(ADSENSE_PUB) != 2: errors.append(f'{rel}: expected one AdSense script and one account meta tag')
+    if ADSENSE_SCRIPT not in text: errors.append(f'{rel}: missing exact AdSense loader URL')
+    if 'name="google-adsense-account"' not in text: errors.append(f'{rel}: missing google-adsense-account meta tag')
+    head=text.split('</head>',1)[0] if '</head>' in text else ''
+    if ADSENSE_SCRIPT not in head or 'name="google-adsense-account"' not in head: errors.append(f'{rel}: AdSense verification elements must be inside head')
     for retired in RETIRED:
         if re.search(retired,text,re.I): errors.append(f'{rel}: retired content matched {retired!r}')
     p=Parser(); p.feed(text)
@@ -58,6 +66,9 @@ sitemap=(ROOT/'sitemap.xml').read_text(encoding='utf-8') if (ROOT/'sitemap.xml')
 for href in sorted(REQUIRED_NAV-{'/'})+['/editorial-policy.html','/privacy.html','/disclaimer.html']:
     url='https://xtianz.com'+href
     if url not in sitemap: errors.append(f'sitemap.xml missing {url}')
+
+ads=(ROOT/'ads.txt').read_text(encoding='utf-8').strip() if (ROOT/'ads.txt').exists() else ''
+if ads != 'google.com, pub-9242762673194411, DIRECT, f08c47fec0942fa0': errors.append('ads.txt is missing or incorrect')
 
 if errors:
     print('\n'.join(f'ERROR: {e}' for e in errors)); sys.exit(1)
