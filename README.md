@@ -1,18 +1,18 @@
-# XTIANZ v39
+# XTIANZ v40 — Horizon Interface
 
-Mobile-first AI systems intelligence with Claude coverage and hardened Google AdSense ownership verification.
+A mobile-first, cinematic AI systems intelligence site for XTIANZ.
 
-## AdSense configuration
-- Publisher: `ca-pub-9242762673194411`
-- Exact AdSense loader is inside `<head>` on every HTML page
-- `google-adsense-account` meta tag is inside `<head>` on every HTML page
-- Root `ads.txt` authorizes Google as a direct seller
-- No visible ad units are added before site approval
+## Highlights
+- Shorter editorial homepage with one signature AI system visualization
+- Claude as a primary destination
+- Simplified grouped desktop navigation and full mobile drawer
+- Mobile bottom dock and swipeable intelligence cards
+- App-like AI Lab tool navigation
+- Stronger editorial hierarchy and fewer repetitive cards
+- AdSense script and ownership meta tag on every HTML page
+- Root ads.txt, release manifest, sitemap, and automated validation
 
-## Other retained features
-- Claude hub and six source-linked guides
-- Instagram `@xtianz` restored on About
-- Mobile-first navigation and engineering tools
-- Build marker: `v39-2026-07-29`
+## Build
+`v40-2026-08-05`
 
-See `DEPLOYMENT.md` before replacing the live site.
+Run `python scripts/validate_site.py` before publishing.

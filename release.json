@@ -1,28 +1,21 @@
 {
   "site": "XTIANZ",
-  "release": "v39",
-  "build": "v39-2026-07-29",
-  "deployed": "2026-07-29",
+  "release": "v40",
+  "build": "v40-2026-08-05",
+  "deployed": "2026-08-05",
+  "design": "Horizon Interface",
+  "adsensePublisher": "ca-pub-9242762673194411",
   "requiredPages": [
     "/",
     "/signals.html",
     "/architecture.html",
     "/ai-mcp.html",
     "/claude.html",
-    "/mangos.html",
     "/lab.html",
     "/risk.html",
+    "/mangos.html",
     "/markets.html",
     "/dmv.html",
     "/about.html"
-  ],
-  "design": "mobile-first intelligence with Claude desk and AdSense verification hardening",
-  "features": [
-    "Exact AdSense loader on every HTML page",
-    "Google AdSense account meta tag on every HTML page",
-    "Root ads.txt with publisher authorization",
-    "Automated AdSense validation in GitHub Actions",
-    "Claude hub and six Claude guides",
-    "Instagram restored on About"
   ]
 }
