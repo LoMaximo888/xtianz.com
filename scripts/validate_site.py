@@ -5,8 +5,8 @@ from urllib.parse import urlparse, unquote
 import json, re, sys
 
 ROOT=Path(__file__).resolve().parents[1]
-EXPECTED='v40-2026-08-05'
-REQUIRED=['index.html','signals.html','architecture.html','ai-mcp.html','claude.html','mangos.html','lab.html','risk.html','markets.html','dmv.html','about.html','editorial-policy.html','privacy.html','disclaimer.html','contact.html','release.json','sitemap.xml','robots.txt','CNAME','assets/site-v40.css','assets/app-v40.js']
+EXPECTED='v41-2026-08-05'
+REQUIRED=['index.html','signals.html','architecture.html','ai-mcp.html','claude.html','mangos.html','lab.html','risk.html','markets.html','dmv.html','about.html','editorial-policy.html','privacy.html','disclaimer.html','contact.html','release.json','sitemap.xml','robots.txt','CNAME','assets/site-v41.css','assets/app-v41.js']
 REQUIRED_NAV={'/','/signals.html','/architecture.html','/ai-mcp.html','/claude.html','/mangos.html','/lab.html','/risk.html','/markets.html','/dmv.html','/about.html'}
 RETIRED=[r'World Cup',r'performance cars',r'Alinea Investing',r'Alinea referral']
 ADSENSE_PUB='ca-pub-9242762673194411'

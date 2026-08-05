@@ -1,4 +1,4 @@
-# XTIANZ v40 — Horizon Interface
+# XTIANZ v41 — Mobile Contrast Edition
 
 A mobile-first, cinematic AI systems intelligence site for XTIANZ.
 
@@ -13,6 +13,6 @@ A mobile-first, cinematic AI systems intelligence site for XTIANZ.
 - Root ads.txt, release manifest, sitemap, and automated validation
 
 ## Build
-`v40-2026-08-05`
+`v41-2026-08-05`
 
 Run `python scripts/validate_site.py` before publishing.
