@@ -1,18 +1,14 @@
-# XTIANZ v41 — Mobile Contrast Edition
+# XTIANZ v42 — Authority & AdSense Quality Edition
 
-A mobile-first, cinematic AI systems intelligence site for XTIANZ.
+Build: `v42-2026-08-09`
 
-## Highlights
-- Shorter editorial homepage with one signature AI system visualization
-- Claude as a primary destination
-- Simplified grouped desktop navigation and full mobile drawer
-- Mobile bottom dock and swipeable intelligence cards
-- App-like AI Lab tool navigation
-- Stronger editorial hierarchy and fewer repetitive cards
-- AdSense script and ownership meta tag on every HTML page
-- Root ads.txt, release manifest, sitemap, and automated validation
+This release prioritizes original expert-led content, primary-source evidence, authorship, fewer indexable flagship guides, and AdSense quality review readiness.
 
-## Build
-`v41-2026-08-05`
-
-Run `python scripts/validate_site.py` before publishing.
+Key changes:
+- 14 indexable flagship articles
+- Named author/technical reviewer profile
+- Six thin/search-driven articles removed entirely
+- Current MCP 2026-07-28 specification across the site
+- Original XTIANZ frameworks and decision tables
+- Utility/legal/search pages excluded from indexing where appropriate
+- AdSense script, account meta and `ads.txt` retained

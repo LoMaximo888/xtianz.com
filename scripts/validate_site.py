@@ -5,15 +5,16 @@ from urllib.parse import urlparse, unquote
 import json, re, sys
 
 ROOT=Path(__file__).resolve().parents[1]
-EXPECTED='v41-2026-08-05'
-REQUIRED=['index.html','signals.html','architecture.html','ai-mcp.html','claude.html','mangos.html','lab.html','risk.html','markets.html','dmv.html','about.html','editorial-policy.html','privacy.html','disclaimer.html','contact.html','release.json','sitemap.xml','robots.txt','CNAME','assets/site-v41.css','assets/app-v41.js']
+EXPECTED='v42-2026-08-09'
+REQUIRED=['index.html','signals.html','architecture.html','ai-mcp.html','claude.html','mangos.html','lab.html','risk.html','markets.html','dmv.html','about.html','author.html','editorial-policy.html','privacy.html','disclaimer.html','contact.html','search.html','release.json','sitemap.xml','robots.txt','CNAME','ads.txt','assets/site-v42.css','assets/app-v42.js']
 REQUIRED_NAV={'/','/signals.html','/architecture.html','/ai-mcp.html','/claude.html','/mangos.html','/lab.html','/risk.html','/markets.html','/dmv.html','/about.html'}
-RETIRED=[r'World Cup',r'performance cars',r'Alinea Investing',r'Alinea referral']
+SITEMAP_REQUIRED={'/','/signals.html','/architecture.html','/ai-mcp.html','/claude.html','/mangos.html','/lab.html','/risk.html','/markets.html','/dmv.html','/about.html','/author.html','/editorial-policy.html'}
+RETIRED_FILES={'top-ai-search-questions.html','ai-stock-movers-watchlist.html','private-ai-companies-openai-anthropic-spacex.html','claude-models-opus-sonnet-guide.html','claude-safety-constitution.html','claude-economic-index-work.html'}
+FLAGSHIPS={
+'enterprise-ai-architecture-decision-framework.html','ai-agent-failure-modes-controls.html','ai-agents-enterprise-operations.html','what-is-mcp-ai-agents.html','mcp-security-governance-checklist.html','mcp-specification-status.html','claude-code-engineering-guide.html','claude-agents-tools-mcp.html','claude-enterprise-governance.html','ai-data-centers-power-water.html','dmv-ai-infrastructure-corridor.html','mangos-explained-ai-companies.html','nvidia-ai-infrastructure-boom.html','xtianz-weekly-signal-method.html'}
 ADSENSE_PUB='ca-pub-9242762673194411'
 ADSENSE_SCRIPT='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='+ADSENSE_PUB
-ADSENSE_META=f'<meta name=\"google-adsense-account\" content=\"{ADSENSE_PUB}\"'
 errors=[]
-
 for item in REQUIRED:
     if not (ROOT/item).is_file(): errors.append(f'Missing required file: {item}')
 
@@ -31,20 +32,24 @@ class Parser(HTMLParser):
     def handle_endtag(self,tag):
         if tag=='nav' and self.in_desktop: self.in_desktop=False
 
+def visible_word_count(text):
+    text=re.sub(r'<script\b[^>]*>.*?</script>',' ',text,flags=re.S|re.I)
+    text=re.sub(r'<style\b[^>]*>.*?</style>',' ',text,flags=re.S|re.I)
+    text=re.sub(r'<[^>]+>',' ',text)
+    return len(re.findall(r"[A-Za-z0-9][A-Za-z0-9’'\-]+",text))
+
 for page in ROOT.rglob('*.html'):
-    rel=page.relative_to(ROOT)
-    text=page.read_text(encoding='utf-8')
+    rel=page.relative_to(ROOT); text=page.read_text(encoding='utf-8')
     if text.lower().count('<!doctype html>')!=1: errors.append(f'{rel}: expected exactly one doctype')
-    if 'name="xtianz-build"' not in text or EXPECTED not in text: errors.append(f'{rel}: missing expected build marker')
-    if text.count(ADSENSE_PUB) != 2: errors.append(f'{rel}: expected one AdSense script and one account meta tag')
-    if ADSENSE_SCRIPT not in text: errors.append(f'{rel}: missing exact AdSense loader URL')
-    if 'name="google-adsense-account"' not in text: errors.append(f'{rel}: missing google-adsense-account meta tag')
+    if EXPECTED not in text or 'name="xtianz-build"' not in text: errors.append(f'{rel}: missing expected build marker')
+    if text.count(ADSENSE_SCRIPT)!=1: errors.append(f'{rel}: expected exactly one AdSense loader')
+    if text.count('name="google-adsense-account"')!=1: errors.append(f'{rel}: expected exactly one AdSense account meta')
     head=text.split('</head>',1)[0] if '</head>' in text else ''
-    if ADSENSE_SCRIPT not in head or 'name="google-adsense-account"' not in head: errors.append(f'{rel}: AdSense verification elements must be inside head')
-    for retired in RETIRED:
-        if re.search(retired,text,re.I): errors.append(f'{rel}: retired content matched {retired!r}')
+    if ADSENSE_SCRIPT not in head or 'name="google-adsense-account"' not in head: errors.append(f'{rel}: AdSense elements must be inside head')
+    for retired in ('World Cup','performance cars','Alinea Investing','Alinea referral'):
+        if re.search(re.escape(retired),text,re.I): errors.append(f'{rel}: retired topic remains: {retired}')
     p=Parser(); p.feed(text)
-    if set(p.desktop_nav)!=REQUIRED_NAV: errors.append(f'{rel}: desktop navigation mismatch: {p.desktop_nav}')
+    if set(p.desktop_nav)!=REQUIRED_NAV: errors.append(f'{rel}: desktop navigation mismatch')
     dup=sorted({x for x in p.ids if p.ids.count(x)>1})
     if dup: errors.append(f'{rel}: duplicate IDs: {dup}')
     for ref in p.refs:
@@ -56,20 +61,32 @@ for page in ROOT.rglob('*.html'):
         target=(ROOT/clean.lstrip('/')) if clean.startswith('/') else (page.parent/clean)
         if clean.endswith('/'): target=target/'index.html'
         if not target.exists(): errors.append(f'{rel}: missing local reference {ref}')
+    if page.name in FLAGSHIPS:
+        if visible_word_count(text)<800: errors.append(f'{rel}: flagship article is under 800 visible words')
+        if '"@type":"Person"' not in text or 'https://xtianz.com/author.html' not in text: errors.append(f'{rel}: missing named Person author schema/profile')
+        if 'PRIMARY SOURCES' not in text.upper() and 'PRIMARY-SOURCE' not in text.upper(): errors.append(f'{rel}: missing visible primary-source section/status')
 
-try:
-    release=json.loads((ROOT/'release.json').read_text())
-    if release.get('build')!=EXPECTED: errors.append('release.json build does not match expected release')
-except Exception as exc: errors.append(f'Invalid release.json: {exc}')
+release=json.loads((ROOT/'release.json').read_text(encoding='utf-8'))
+if release.get('build')!=EXPECTED: errors.append('release.json build does not match expected release')
+if release.get('indexableFlagshipArticles')!=len(FLAGSHIPS): errors.append('release.json flagship count mismatch')
 
-sitemap=(ROOT/'sitemap.xml').read_text(encoding='utf-8') if (ROOT/'sitemap.xml').exists() else ''
-for href in sorted(REQUIRED_NAV-{'/'})+['/editorial-policy.html','/privacy.html','/disclaimer.html']:
-    url='https://xtianz.com'+href
+sitemap=(ROOT/'sitemap.xml').read_text(encoding='utf-8')
+for href in SITEMAP_REQUIRED:
+    url='https://xtianz.com/' if href=='/' else 'https://xtianz.com'+href
     if url not in sitemap: errors.append(f'sitemap.xml missing {url}')
+for retired in RETIRED_FILES:
+    if (ROOT/'articles'/retired).exists(): errors.append(f'retired thin page still exists: {retired}')
+    if retired in sitemap: errors.append(f'sitemap.xml includes retired page {retired}')
+for f in FLAGSHIPS:
+    if f not in sitemap: errors.append(f'sitemap.xml missing flagship article {f}')
 
-ads=(ROOT/'ads.txt').read_text(encoding='utf-8').strip() if (ROOT/'ads.txt').exists() else ''
-if ads != 'google.com, pub-9242762673194411, DIRECT, f08c47fec0942fa0': errors.append('ads.txt is missing or incorrect')
+ads=(ROOT/'ads.txt').read_text(encoding='utf-8').strip()
+if ads!='google.com, pub-9242762673194411, DIRECT, f08c47fec0942fa0': errors.append('ads.txt is missing or incorrect')
+
+app=(ROOT/'assets/app-v42.js').read_text(encoding='utf-8')
+for retired_phrase in ('Five AI Questions People Keep Searching','Top AI Stock Movers','Claude Models Guide: Choosing','How to Track OpenAI, Anthropic, and SpaceX'):
+    if retired_phrase in app: errors.append(f'search index still contains retired phrase: {retired_phrase}')
 
 if errors:
     print('\n'.join(f'ERROR: {e}' for e in errors)); sys.exit(1)
-print(f'XTIANZ {EXPECTED}: validation passed across {len(list(ROOT.rglob("*.html")))} HTML pages.')
+print(f'XTIANZ {EXPECTED}: validation passed across {len(list(ROOT.rglob("*.html")))} HTML pages and {len(FLAGSHIPS)} flagship articles.')

@@ -1,9 +1,13 @@
-# Deploy XTIANZ v41
+# Deploy XTIANZ v42
 
-1. Extract the ZIP.
-2. Replace the complete contents of the GitHub Pages repository with everything in the extracted folder.
-3. Include hidden folders such as `.github/` and all `articles/`, `assets/`, and `scripts/` files.
-4. Commit: `Deploy XTIANZ v41 Mobile Contrast Edition`
-5. Wait for GitHub Pages and the validation workflow to finish.
-6. Verify `https://xtianz.com/release.json` reports `v41-2026-08-05`.
-7. Verify `https://xtianz.com/ads.txt` and the Claude, AI Lab, Signals, and DMV pages.
+1. Replace the repository root with **everything** in this folder.
+2. Include hidden `.github/` plus `articles/`, `assets/`, `scripts/`, `ads.txt`, `robots.txt`, and `sitemap.xml`.
+3. Commit: `Deploy XTIANZ v42 authority edition`
+4. Verify `https://xtianz.com/release.json` shows `v42-2026-08-09`.
+5. In Google Search Console, request reindexing for `/`, `/author.html`, `/ai-mcp.html`, `/claude.html`, and the flagship articles.
+6. Allow Google to recrawl the removed article URLs as 404s and the rewritten flagship pages before submitting another AdSense review.
+
+
+## AdSense review timing
+
+After deployment, request indexing for the homepage and flagship guides in Search Console. Allow Google to recrawl the rewritten flagship pages and removed URLs before requesting another AdSense review.
