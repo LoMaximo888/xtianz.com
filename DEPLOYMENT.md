@@ -1,13 +1,22 @@
-# Deploy XTIANZ v42
+# XTIANZ v43 deployment
 
-1. Replace the repository root with **everything** in this folder.
-2. Include hidden `.github/` plus `articles/`, `assets/`, `scripts/`, `ads.txt`, `robots.txt`, and `sitemap.xml`.
-3. Commit: `Deploy XTIANZ v42 authority edition`
-4. Verify `https://xtianz.com/release.json` shows `v42-2026-08-09`.
-5. In Google Search Console, request reindexing for `/`, `/author.html`, `/ai-mcp.html`, `/claude.html`, and the flagship articles.
-6. Allow Google to recrawl the removed article URLs as 404s and the rewritten flagship pages before submitting another AdSense review.
+## Recommended deployment
+1. Replace/upload every file in this package, including `.github/`, `scripts/`, `articles/`, and `assets/`.
+2. In GitHub: **Settings → Pages → Build and deployment → Source → GitHub Actions**.
+3. Commit/push the release. The workflow builds an allowlisted `_site` artifact and publishes only approved pages.
 
+## Retired files
+If these files still exist in the repository from an older release, delete them when convenient. The v43 GitHub Actions workflow excludes them from the live site even before repository cleanup:
+- articles/top-ai-search-questions.html
+- articles/ai-stock-movers-watchlist.html
+- articles/private-ai-companies-openai-anthropic-spacex.html
+- articles/claude-models-opus-sonnet-guide.html
+- articles/claude-safety-constitution.html
+- articles/claude-economic-index-work.html
 
-## AdSense review timing
+## Verify after deploy
+- `https://xtianz.com/release.json` must show `v43-2026-08-09`.
+- Each retired URL above should return the site 404 page / not be present in the Pages artifact.
+- `https://xtianz.com/ads.txt` must remain authorized.
 
-After deployment, request indexing for the homepage and flagship guides in Search Console. Allow Google to recrawl the rewritten flagship pages and removed URLs before requesting another AdSense review.
+Do not request another AdSense review until the v43 release is live and Google Search Console has recrawled the homepage plus several flagship articles.

@@ -1,14 +1,5 @@
-# XTIANZ v42 — Authority & AdSense Quality Edition
+# XTIANZ v43 — AdSense Pre-Review Cleanup Edition
 
-Build: `v42-2026-08-09`
+This release hardens the v42 authority/content-quality rebuild for AdSense re-review. It publishes a clean allowlisted GitHub Pages artifact, excludes retired search-driven pages, synchronizes visible review dates, consolidates the Markets page, preserves named authorship/primary sources, and retains AdSense verification.
 
-This release prioritizes original expert-led content, primary-source evidence, authorship, fewer indexable flagship guides, and AdSense quality review readiness.
-
-Key changes:
-- 14 indexable flagship articles
-- Named author/technical reviewer profile
-- Six thin/search-driven articles removed entirely
-- Current MCP 2026-07-28 specification across the site
-- Original XTIANZ frameworks and decision tables
-- Utility/legal/search pages excluded from indexing where appropriate
-- AdSense script, account meta and `ads.txt` retained
+See `DEPLOYMENT.md` before publishing.

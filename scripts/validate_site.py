@@ -5,8 +5,8 @@ from urllib.parse import urlparse, unquote
 import json, re, sys
 
 ROOT=Path(__file__).resolve().parents[1]
-EXPECTED='v42-2026-08-09'
-REQUIRED=['index.html','signals.html','architecture.html','ai-mcp.html','claude.html','mangos.html','lab.html','risk.html','markets.html','dmv.html','about.html','author.html','editorial-policy.html','privacy.html','disclaimer.html','contact.html','search.html','release.json','sitemap.xml','robots.txt','CNAME','ads.txt','assets/site-v42.css','assets/app-v42.js']
+EXPECTED='v43-2026-08-09'
+REQUIRED=['index.html','signals.html','architecture.html','ai-mcp.html','claude.html','mangos.html','lab.html','risk.html','markets.html','dmv.html','about.html','author.html','editorial-policy.html','privacy.html','disclaimer.html','contact.html','search.html','release.json','sitemap.xml','robots.txt','CNAME','ads.txt','assets/site-v43.css','assets/app-v43.js','scripts/build_clean_site.py']
 REQUIRED_NAV={'/','/signals.html','/architecture.html','/ai-mcp.html','/claude.html','/mangos.html','/lab.html','/risk.html','/markets.html','/dmv.html','/about.html'}
 SITEMAP_REQUIRED={'/','/signals.html','/architecture.html','/ai-mcp.html','/claude.html','/mangos.html','/lab.html','/risk.html','/markets.html','/dmv.html','/about.html','/author.html','/editorial-policy.html'}
 RETIRED_FILES={'top-ai-search-questions.html','ai-stock-movers-watchlist.html','private-ai-companies-openai-anthropic-spacex.html','claude-models-opus-sonnet-guide.html','claude-safety-constitution.html','claude-economic-index-work.html'}
@@ -39,6 +39,8 @@ def visible_word_count(text):
     return len(re.findall(r"[A-Za-z0-9][A-Za-z0-9’'\-]+",text))
 
 for page in ROOT.rglob('*.html'):
+    if page.name in RETIRED_FILES or '_site' in page.parts:
+        continue
     rel=page.relative_to(ROOT); text=page.read_text(encoding='utf-8')
     if text.lower().count('<!doctype html>')!=1: errors.append(f'{rel}: expected exactly one doctype')
     if EXPECTED not in text or 'name="xtianz-build"' not in text: errors.append(f'{rel}: missing expected build marker')
@@ -75,18 +77,26 @@ for href in SITEMAP_REQUIRED:
     url='https://xtianz.com/' if href=='/' else 'https://xtianz.com'+href
     if url not in sitemap: errors.append(f'sitemap.xml missing {url}')
 for retired in RETIRED_FILES:
-    if (ROOT/'articles'/retired).exists(): errors.append(f'retired thin page still exists: {retired}')
     if retired in sitemap: errors.append(f'sitemap.xml includes retired page {retired}')
 for f in FLAGSHIPS:
     if f not in sitemap: errors.append(f'sitemap.xml missing flagship article {f}')
 
+
+for retired in RETIRED_FILES:
+    for page in list(ROOT.glob('*.html')) + list((ROOT/'articles').glob('*.html')):
+        if page.name in RETIRED_FILES:
+            continue
+        if retired in page.read_text(encoding='utf-8'):
+            errors.append(f'{page.relative_to(ROOT)}: references retired page {retired}')
+
 ads=(ROOT/'ads.txt').read_text(encoding='utf-8').strip()
 if ads!='google.com, pub-9242762673194411, DIRECT, f08c47fec0942fa0': errors.append('ads.txt is missing or incorrect')
 
-app=(ROOT/'assets/app-v42.js').read_text(encoding='utf-8')
+app=(ROOT/'assets/app-v43.js').read_text(encoding='utf-8')
 for retired_phrase in ('Five AI Questions People Keep Searching','Top AI Stock Movers','Claude Models Guide: Choosing','How to Track OpenAI, Anthropic, and SpaceX'):
     if retired_phrase in app: errors.append(f'search index still contains retired phrase: {retired_phrase}')
 
 if errors:
     print('\n'.join(f'ERROR: {e}' for e in errors)); sys.exit(1)
-print(f'XTIANZ {EXPECTED}: validation passed across {len(list(ROOT.rglob("*.html")))} HTML pages and {len(FLAGSHIPS)} flagship articles.')
+maintained=[p for p in ROOT.rglob('*.html') if p.name not in RETIRED_FILES and '_site' not in p.parts]
+print(f'XTIANZ {EXPECTED}: validation passed across {len(maintained)} maintained HTML pages and {len(FLAGSHIPS)} flagship articles.')

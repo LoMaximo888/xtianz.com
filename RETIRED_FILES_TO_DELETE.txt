@@ -1,0 +1,10 @@
+These legacy files should be deleted from the GitHub repository if they still exist:
+
+articles/top-ai-search-questions.html
+articles/ai-stock-movers-watchlist.html
+articles/private-ai-companies-openai-anthropic-spacex.html
+articles/claude-models-opus-sonnet-guide.html
+articles/claude-safety-constitution.html
+articles/claude-economic-index-work.html
+
+XTIANZ v43 also protects the live site by deploying an allowlisted _site artifact that excludes these files.
