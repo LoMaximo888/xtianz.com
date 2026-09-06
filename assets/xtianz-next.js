@@ -1,50 +1,80 @@
 (() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const reveals = document.querySelectorAll('.reveal');
+  const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+  const $ = (s, r=document) => r.querySelector(s);
+
+  // Reveal motion.
+  const reveals = $$('.reveal');
   if ('IntersectionObserver' in window && !reduceMotion) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const delay = Number(entry.target.dataset.delay || 0);
-          setTimeout(() => entry.target.classList.add('visible'), delay);
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
+    const io = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('visible'), Number(entry.target.dataset.delay || 0)); io.unobserve(entry.target); }
+    }), {threshold:.12});
     reveals.forEach(el => io.observe(el));
   } else reveals.forEach(el => el.classList.add('visible'));
 
-  const overlay = document.querySelector('[data-overlay]');
-  const openers = document.querySelectorAll('[data-search-open],[data-menu-open]');
-  const close = document.querySelector('[data-overlay-close]');
-  const setOverlay = (open) => {
-    overlay.classList.toggle('open', open);
-    overlay.setAttribute('aria-hidden', String(!open));
-    document.body.style.overflow = open ? 'hidden' : '';
-  };
-  openers.forEach(b => b.addEventListener('click', () => setOverlay(true)));
-  close?.addEventListener('click', () => setOverlay(false));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') setOverlay(false); });
+  // Navigation overlay.
+  const overlay = $('[data-overlay]');
+  const setOverlay = open => { if(!overlay) return; overlay.classList.toggle('open',open); overlay.setAttribute('aria-hidden',String(!open)); document.body.style.overflow=open?'hidden':''; };
+  $$('[data-search-open],[data-menu-open]').forEach(b=>b.addEventListener('click',()=>setOverlay(true)));
+  $('[data-overlay-close]')?.addEventListener('click',()=>setOverlay(false));
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') setOverlay(false); });
 
-  const canvas = document.getElementById('networkCanvas');
-  if (!canvas || reduceMotion) return;
-  const ctx = canvas.getContext('2d');
-  let w=0,h=0,dpr=1,points=[];
-  const resize = () => {
-    dpr = Math.min(window.devicePixelRatio || 1, 2); w = canvas.clientWidth; h = canvas.clientHeight;
-    canvas.width = w*dpr; canvas.height = h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
-    const count = Math.max(28, Math.min(72, Math.floor(w/22)));
-    points = Array.from({length:count}, () => ({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.16,vy:(Math.random()-.5)*.16,r:Math.random()*1.3+.4}));
+  // Homepage ambient network.
+  const canvas=$('#networkCanvas');
+  if(canvas && !reduceMotion){
+    const ctx=canvas.getContext('2d'); let w=0,h=0,dpr=1,points=[];
+    const resize=()=>{ dpr=Math.min(devicePixelRatio||1,2);w=canvas.clientWidth;h=canvas.clientHeight;canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);const count=Math.max(28,Math.min(72,Math.floor(w/22)));points=Array.from({length:count},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.16,vy:(Math.random()-.5)*.16,r:Math.random()*1.3+.4})); };
+    const draw=()=>{ctx.clearRect(0,0,w,h);for(const p of points){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1}for(let i=0;i<points.length;i++)for(let j=i+1;j<points.length;j++){const a=points[i],b=points[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<135){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(94,230,255,${(1-d/135)*.13})`;ctx.stroke()}}points.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(185,255,74,.45)';ctx.fill()});requestAnimationFrame(draw)};
+    resize();draw();addEventListener('resize',resize);
+  }
+
+  // Interactive system map.
+  const sys=$('[data-system-map]');
+  if(sys && window.XTIANZ_DATA){
+    const layers=window.XTIANZ_DATA.layers;
+    $$('[data-layer]',sys).forEach(btn=>btn.addEventListener('click',()=>{
+      $$('[data-layer]',sys).forEach(x=>x.classList.remove('active'));btn.classList.add('active');const d=layers[btn.dataset.layer];if(!d)return;
+      $('[data-layer-kicker]',sys).textContent=d.kicker;$('[data-layer-title]',sys).textContent=d.title;$('[data-layer-copy]',sys).textContent=d.copy;$('[data-layer-link]',sys).href=d.href;
+    }));
+  }
+
+  // Compact homepage decision engine.
+  const de=$('[data-decision-engine]');
+  const decision=()=>{
+    if(!de)return;const purpose=$('[data-decision-purpose].selected',de)?.dataset.decisionPurpose||'knowledge';const val=n=>$(`[data-decision-field="${n}"]`,de)?.value;
+    const data=val('data'), actions=val('actions'), verify=val('verify'), sensitive=val('sensitive');let result,reason,aut='Low',risk='Low',human='Optional';
+    if(purpose==='agent'){result='Bounded agent + approval gates';reason='The path is variable; constrain tools, budget, state and recovery.';aut='Medium';risk=sensitive==='yes'?'High':'Medium';human=sensitive==='yes'||verify==='no'?'Required':'Recommended';}
+    else if(actions==='yes'){result=purpose==='transaction'?'Deterministic tool workflow':'RAG + deterministic tool workflow';reason='Keep orchestration explicit and use the model only where language or knowledge adds value.';aut='Low';risk=sensitive==='yes'?'Medium':'Low';human=sensitive==='yes'||verify==='no'?'Required':'Recommended';}
+    else if(data==='yes'){result='RAG assistant';reason='Ground responses in current or private knowledge without broad action privileges.';aut='Low';risk=sensitive==='yes'?'Medium':'Low';human=sensitive==='yes'?'Recommended':'Optional';}
+    else {result='Deterministic automation or direct model call';reason='Avoid agent complexity unless the task requires changing knowledge, tools or adaptive planning.';aut='Minimal';risk='Low';human='Optional';}
+    $('[data-decision-result]',de).textContent=result;$('[data-decision-reason]',de).textContent=reason;$('[data-decision-autonomy]',de).textContent=aut;$('[data-decision-risk]',de).textContent=risk;$('[data-decision-human]',de).textContent=human;
   };
-  const draw = () => {
-    ctx.clearRect(0,0,w,h);
-    for (const p of points){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1; }
-    for(let i=0;i<points.length;i++) for(let j=i+1;j<points.length;j++){
-      const a=points[i],b=points[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
-      if(d<135){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(94,230,255,${(1-d/135)*.13})`;ctx.stroke();}
-    }
-    points.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(185,255,74,.45)';ctx.fill();});
-    requestAnimationFrame(draw);
-  };
-  resize(); draw(); window.addEventListener('resize', resize);
+  if(de){$$('[data-decision-purpose]',de).forEach(b=>b.addEventListener('click',()=>{$$('[data-decision-purpose]',de).forEach(x=>x.classList.remove('selected'));b.classList.add('selected');decision()}));$$('[data-decision-field]',de).forEach(x=>x.addEventListener('change',decision));decision();}
+
+  // Render current signal brief.
+  const sigList=$('[data-signal-list]');
+  if(sigList && window.XTIANZ_DATA){const limit=Number(sigList.dataset.limit||99);window.XTIANZ_DATA.signals.slice(0,limit).forEach(s=>{const a=document.createElement('a');a.className='signal-row reveal visible';a.href=`signals.html#${s.id}`;a.innerHTML=`<span class="signal-num">${s.num}</span><div><small class="signal-date">${s.date} · ${s.category}</small><h3>${s.title}</h3><p>${s.why}</p><span class="signal-source">${s.source} · PRIMARY SOURCE</span></div><span class="arrow" aria-hidden="true">↗</span>`;sigList.appendChild(a)});}
+
+  // Architecture pattern stage.
+  const pt=$('[data-pattern-tabs]');
+  if(pt){const patterns={rag:['01 / KNOWLEDGE','RAG','Ground responses in retrieved information when answers depend on changing or proprietary knowledge.','Knowledge freshness matters','Retrieval + citation fidelity','Stale or inaccessible sources'],tool:['02 / ACTION','Tool calling','Let a model invoke narrow deterministic functions while the application owns orchestration.','Language decides which function','Tool selection + arguments','Overbroad tool catalogs'],workflow:['03 / CONTROL','Workflow','Combine models with explicit deterministic steps when the process is known.','Known sequence with language steps','Step success + rollback','Hidden partial failure'],agent:['04 / ADAPTIVE','Bounded agent','Allow planning within a constrained goal, tool set, budget and approval model.','Path varies materially','Task success + safe failure','Runaway loops + privilege'],router:['05 / SPECIALIZE','Router + specialists','Send requests to specialized models or systems based on task characteristics.','Distinct task classes','Routing precision + fallback','Misclassification + complexity'],approval:['06 / CONSEQUENCE','Human approval gate','Require explicit review before consequential or hard-to-reverse actions.','Failure cost is material','Approval quality + audit trail','Ceremonial review']};const update=k=>{const d=patterns[k];$('[data-pattern-kicker]').textContent=d[0];$('[data-pattern-title]').textContent=d[1];$('[data-pattern-copy]').textContent=d[2];$('[data-pattern-use]').textContent=d[3];$('[data-pattern-measure]').textContent=d[4];$('[data-pattern-watch]').textContent=d[5];};$$('[data-pattern]',pt).forEach(b=>b.addEventListener('click',()=>{$$('[data-pattern]',pt).forEach(x=>x.classList.remove('active'));b.classList.add('active');update(b.dataset.pattern)}));}
+
+  // Full lab pattern recommender.
+  const fp=$('[data-full-pattern]');
+  const updateFp=()=>{if(!fp)return;const v=n=>$(`[data-fp="${n}"]`,fp).value;let result='Deterministic workflow',copy='Use rules and explicit orchestration first.',aut='AUTONOMY · MINIMAL',gate='HUMAN GATE · OPTIONAL';if(v('actions')==='no'&&v('fresh')==='current'){result='RAG assistant';copy='Ground answers in controlled, current or private knowledge.';aut='AUTONOMY · LOW'}else if(v('actions')==='yes'&&v('variation')==='low'){result=v('fresh')==='current'?'RAG + deterministic tool workflow':'Deterministic tool workflow';copy='Keep the sequence explicit and bound each tool call.';aut='AUTONOMY · LOW';gate=v('sensitive')==='high'||v('verify')==='no'?'HUMAN GATE · REQUIRED':'HUMAN GATE · RECOMMENDED'}else if(v('variation')==='high'){result='Bounded agent';copy='Constrain tools, budgets, state, time and recovery.';aut='AUTONOMY · MEDIUM';gate=v('sensitive')==='high'||v('approval')==='yes'?'HUMAN GATE · REQUIRED':'HUMAN GATE · RECOMMENDED'}if(v('sensitive')==='high'&&v('approval')==='no'){result+=' · PILOT ONLY';copy+=' High-impact use without approval should remain tightly scoped.';gate='HUMAN GATE · MISSING'}$('[data-fp-result]',fp).textContent=result;$('[data-fp-copy]',fp).textContent=copy;$('[data-fp-autonomy]',fp).textContent=aut;$('[data-fp-gate]',fp).textContent=gate;};if(fp){$$('[data-fp]',fp).forEach(x=>x.addEventListener('change',updateFp));updateFp();}
+
+  // Agent decision tree.
+  const at=$('[data-agent-tree]');const updateAt=()=>{if(!at)return;const v=n=>$(`[data-at="${n}"]`,at).value;let r='Start with a deterministic workflow',c='Use explicit rules and add AI only where language interpretation is necessary.';if(v('det')==='no'&&v('verify')==='yes'&&v('reverse')==='yes'){r='Use a bounded agent';c='Variable path + strong verification + reversibility can justify supervised autonomy.'}if(v('sensitive')==='yes'||v('cost')==='high'||v('reverse')==='no'){r=v('approval')==='yes'?'Use a supervised agent with approval gates':'Keep it pilot-only or deterministic';c='High consequence lowers acceptable autonomy until human control and recovery are strong.'}$('[data-at-result]',at).textContent=r;$('[data-at-copy]',at).textContent=c;};if(at){$$('[data-at]',at).forEach(x=>x.addEventListener('change',updateAt));updateAt();}
+
+  // Evaluation generator.
+  const eg=$('[data-eval-generator]');$('[data-eval-generate]',eg||document)?.addEventListener('click',()=>{const v=n=>$(`[data-eval="${n}"]`,eg)?.value.trim()||'Not specified';$('[data-eval-output]',eg).textContent=`TASK\n${v('task')}\n\nSUCCESS CRITERIA\n${v('outcome')}\n\nGROUND TRUTH\n${v('truth')}\n\nFAILURE SCENARIOS\n${v('failures')}\n\nRELEASE METRICS\n• task success\n• groundedness / evidence fidelity\n• tool selection + argument correctness\n• safe escalation\n• regression rate\n• latency target: ${v('latency')}\n• cost target: ${v('cost')}\n\nRELEASE GATE\nNo critical failure class may regress without an explicit exception and owner.`;});
+
+  // Threat model.
+  const tm=$('[data-threat-model]');const updateTm=()=>{if(!tm)return;const selected=$$('input:checked',tm).map(x=>x.value);let controls=['Authenticated actor and server identity','Least privilege per tool','Structured logging and revocation path'];if(selected.includes('data'))controls.push('Data classification, field minimization and retention boundaries');if(selected.includes('write'))controls.push('Dry-run, approval gate, idempotency and rollback for side effects');if(selected.includes('untrusted'))controls.push('Separate untrusted content from control instructions; injection tests');if(selected.includes('multi'))controls.push('Per-server trust policy, namespace isolation and allowlists');if(selected.includes('delegated'))controls.push('Audience-bound delegated tokens and consent context');if(selected.includes('code'))controls.push('Sandbox execution, network restrictions and resource budgets');if(selected.includes('long'))controls.push('Task state, cancellation, timeout and resumability controls');if(selected.includes('tenant'))controls.push('Tenant isolation, scoped credentials and audit partitioning');$('[data-threat-output]',tm).innerHTML=controls.map(x=>`<li>${x}</li>`).join('');};if(tm){$$('input',tm).forEach(x=>x.addEventListener('change',updateTm));updateTm();}
+
+  // Economics calculator.
+  const econ=$('[data-econ]');const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);const updateEcon=()=>{if(!econ)return;const n=k=>Number($(`[data-econ="${k}"]`,econ).value||0);const baseCalls=n('tasks')*n('calls');const calls=baseCalls*(1+n('retry')/100);const model=calls*n('tokens')/1e6*n('rate');const human=n('tasks')*n('review')/100*n('minutes')/60*n('hourly');$('[data-econ-model]',econ).textContent=money(model)+'/ mo';$('[data-econ-human]',econ).textContent=money(human)+'/ mo';$('[data-econ-total]',econ).textContent=money(model+human)+'/ mo';};if(econ){$$('[data-econ]',econ).forEach(x=>x.addEventListener('input',updateEcon));updateEcon();}
+
+  // Risk readiness scoring.
+  const rd=$('[data-readiness]');const updateRd=()=>{if(!rd)return;const score=$$('[data-readiness-item]',rd).reduce((a,x)=>a+Number(x.value),0);let label=score<12?'PILOT ONLY':score<19?'CONDITIONAL PRODUCTION':'STRONG OPERATING EVIDENCE';$('[data-readiness-score]',rd).textContent=score;$('[data-readiness-label]',rd).textContent=label;};if(rd){$$('[data-readiness-item]',rd).forEach(x=>x.addEventListener('change',updateRd));updateRd();}
 })();
