@@ -1,3 +1,5 @@
+FILE_MANIFEST.txt
+README_UPLOAD.txt
 about.html
 ai-mcp.html
 architecture.html
@@ -5,11 +7,14 @@ assets/xtianz-data.js
 assets/xtianz-next.css
 assets/xtianz-next.js
 claude.html
+datacenters.html
 dmv.html
 feed.xml
 index.html
 lab.html
 mangos.html
 markets.html
+quantum.html
 risk.html
 signals.html
+sitemap-additions.xml

@@ -1,6 +1,30 @@
 window.XTIANZ_DATA={
   "signals": [
     {
+      "id": "quantum-pqc",
+      "num": "Q1",
+      "date": "AUG 2026",
+      "category": "QUANTUM SECURITY",
+      "confidence": "HIGH",
+      "title": "Post-quantum migration is becoming a current architecture task.",
+      "copy": "NIST says its first three post-quantum cryptography standards are ready to implement now.",
+      "why": "Why it matters: crypto inventory and crypto agility can begin before fault-tolerant quantum systems arrive.",
+      "source": "NIST",
+      "url": "https://www.nist.gov/pqc"
+    },
+    {
+      "id": "coolerchips",
+      "num": "D1",
+      "date": "AUG 26",
+      "category": "DATA CENTERS",
+      "confidence": "HIGH",
+      "title": "AI rack heat is pushing cooling design into a new operating envelope.",
+      "copy": "DOE's COOLERCHIPS 1.5 program describes advanced cooling validation for AI heat loads up to 1 megawatt per rack.",
+      "why": "Why it matters: rack density is now an electrical, thermal and operations problem.",
+      "source": "U.S. Department of Energy",
+      "url": "https://www.energy.gov/nepa/articles/cx-271071-cooling-operations-optimized-leaps-energy-reliability-and-carbon"
+    },
+    {
       "id": "enterprise-agents",
       "num": "01",
       "date": "SEP 01",
@@ -108,7 +132,7 @@ window.XTIANZ_DATA={
       "kicker": "08 / POWER",
       "title": "The final constraint can be physical.",
       "copy": "Grid capacity, cooling, fiber, land, permitting and construction connect AI demand to real places such as Northern Virginia.",
-      "href": "dmv.html"
+      "href": "datacenters.html"
     }
   }
 };
