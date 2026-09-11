@@ -17,4 +17,4 @@ markets.html
 quantum.html
 risk.html
 signals.html
-sitemap-additions.xml
+sitemap-additions.xmlabout.html - Updated About hero card to Instagram @xtianz; removed author-review card.
