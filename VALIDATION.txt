@@ -1,1 +1,10 @@
-PASS
+Validation completed:
+- JavaScript syntax checked with node --check.
+- Local HTML links, asset references and fragment targets checked against the existing site baseline.
+- Desktop homepage, gaming hub and technology briefing visually inspected in Chrome.
+- 390px-wide iframe layouts inspected for all three pages; this checks responsive layout, not a real-device browser.
+- Existing mobile homepage overflow corrected.
+- Mobile menu opened and new destinations verified visually.
+- Calculator browser test: 100 GB at 1000 Mbps and 80% -> 17 min.
+- Default calculator: 100 GB at 100 Mbps and 80% -> 2 hr 47 min.
+- No production deployment performed.
